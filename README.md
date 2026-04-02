@@ -9,7 +9,7 @@
 ## About Me
 
 Currently, I am a research scholar at the Department of Artificial Intelligence, IIT Kharagpur, working under the supervision of Prof. Prabhat Kumar Mishra.  
-I work at the **PSALM Lab (Predictive Stochastic Adaptive Learning Machines)**.
+I work at the **RHPI Lab (Receding Horizon and Predictive Intelligence)**.
 
 My research focuses on the intersection of **Reinforcement Learning**, **Estimation**, and **Optimization**, with applications in:
 - Large Language Models (LLMs)
@@ -68,7 +68,7 @@ I have contributed as a Teaching Assistant for the following course(s) in the De
 ## Contact
 
 - **Email:** ranjan.sarkar.24@kgpian.iitkgp.ac.in
-- **Lab:** PSALM Lab, Department of Artificial Intelligence, IIT Kharagpur
+- **Lab:** RHPI Lab, Department of Artificial Intelligence, IIT Kharagpur
 - **Supervisor:** Prof. Prabhat Kumar Mishra
 
 ---
