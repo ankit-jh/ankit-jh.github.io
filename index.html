@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Your Name | Climate & Communities</title>
+<title> Ankit Jha| Climate, Communities & Governance</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -12,28 +12,55 @@
 <style>
 body {
     font-family: 'Inter', sans-serif;
-    margin: 0;
+    color: #1a1a1a;
 }
+
 h1, h2 {
     font-family: 'Playfair Display', serif;
 }
-.section {
-    height: 100vh;
+
+/* Navbar */
+.nav-link {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
-.overlay {
+.nav-link::after {
+    content: '';
     position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #15803d;
+    transition: 0.3s;
 }
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Timeline */
+.timeline {
+    border-left: 2px solid #15803d;
+}
+.timeline-item {
+    position: relative;
+    padding-left: 20px;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    background: #15803d;
+    border-radius: 50%;
+}
+
+/* Fade animation */
 .fade-in {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
 }
 .fade-in.visible {
     opacity: 1;
@@ -42,123 +69,124 @@ h1, h2 {
 </style>
 </head>
 
-<body class="bg-white text-gray-800">
+<body>
+
+<!-- NAVBAR -->
+<header class="fixed w-full z-50 bg-white/80 backdrop-blur border-b">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="font-bold text-lg">Ankit Jha</div>
+        <nav class="space-x-6 text-sm">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#publications" class="nav-link">Publications</a>
+            <a href="#" class="px-3 py-1 border rounded-full hover:bg-black hover:text-white">CV</a>
+        </nav>
+    </div>
+</header>
 
 <!-- HERO -->
-<section class="section text-white">
-    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="absolute w-full h-full object-cover">
-    <div class="overlay"></div>
+<section class="h-screen relative flex items-center justify-center text-center text-white">
 
-    <div class="relative z-10 fade-in">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" 
+         class="absolute w-full h-full object-cover">
+
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="relative z-10 px-6 fade-in">
         <h1 class="text-5xl md:text-7xl mb-6">
-            Hi, I'm <span class="text-green-300">Your Name</span>
+            ANKIT JHA
         </h1>
-        <p class="text-xl md:text-2xl text-gray-200">
+
+        <p class="text-xl md:text-2xl text-gray-200 mb-6">
             Climate Action • Communities • Governance
         </p>
-    </div>
-</section>
 
-<!-- WHY -->
-<section class="section bg-green-50">
-    <div class="max-w-3xl px-6 fade-in">
-        <h2 class="text-4xl mb-6">Why I Do This</h2>
-        <p class="text-lg text-gray-600 leading-relaxed">
-            Climate change is not just an environmental issue—it is about people, livelihoods, and justice.  
-            My work focuses on bridging the gap between policy frameworks and lived realities on the ground.
+        <p class="italic text-gray-300 max-w-xl mx-auto">
+            Working at the intersection of people, policy and planet.
         </p>
     </div>
 </section>
 
-<!-- FIELD IMAGE -->
-<section class="section text-white">
-    <img src="https://images.unsplash.com/photo-1464822759844-d150baec0494" class="absolute w-full h-full object-cover">
-    <div class="overlay"></div>
-
-    <div class="relative z-10 max-w-2xl px-6 fade-in">
-        <h2 class="text-4xl mb-6">Grounded in Communities</h2>
-        <p class="text-lg text-gray-200">
-            Working closely with local communities to co-create solutions that are sustainable, inclusive, and resilient.
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-green-50">
+    <div class="max-w-4xl mx-auto px-6 fade-in">
+        <h2 class="text-4xl mb-6">About</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            I work on climate action through the lens of communities and governance. My focus lies in building pathways where sustainability aligns with social equity and local realities.
         </p>
-    </div>
-</section>
 
-<!-- WORK -->
-<section class="section bg-white">
-    <div class="max-w-4xl px-6 fade-in">
-        <h2 class="text-4xl mb-10">Work & Initiatives</h2>
-
-        <div class="grid md:grid-cols-2 gap-8 text-left">
-            <div>
-                <h3 class="font-bold text-xl mb-2">🌱 Climate Resilience Project</h3>
-                <p class="text-gray-600">
-                    Supporting rural communities in adapting to changing environmental conditions through participatory approaches.
-                </p>
-            </div>
-
-            <div>
-                <h3 class="font-bold text-xl mb-2">🌍 Policy & Governance</h3>
-                <p class="text-gray-600">
-                    Engaging with institutions to design frameworks that integrate sustainability into governance systems.
-                </p>
-            </div>
-
-            <div>
-                <h3 class="font-bold text-xl mb-2">🤝 Community Engagement</h3>
-                <p class="text-gray-600">
-                    Facilitating dialogue between stakeholders to ensure inclusive decision-making processes.
-                </p>
-            </div>
-
-            <div>
-                <h3 class="font-bold text-xl mb-2">🌾 Sustainability Research</h3>
-                <p class="text-gray-600">
-                    Exploring intersections of ecology, livelihoods, and long-term environmental sustainability.
-                </p>
-            </div>
+        <div class="flex flex-wrap gap-3">
+            <span class="px-3 py-1 bg-white border rounded-full text-sm">Climate Policy</span>
+            <span class="px-3 py-1 bg-white border rounded-full text-sm">Sustainability</span>
+            <span class="px-3 py-1 bg-white border rounded-full text-sm">Community Engagement</span>
+            <span class="px-3 py-1 bg-white border rounded-full text-sm">Governance</span>
         </div>
     </div>
 </section>
 
-<!-- IMPACT -->
-<section class="section bg-green-100">
-    <div class="max-w-3xl px-6 fade-in">
-        <h2 class="text-4xl mb-6">Impact</h2>
-        <p class="text-lg text-gray-700 leading-relaxed">
-            My work aims to create pathways where environmental sustainability aligns with social equity—ensuring that climate action is inclusive and just.
-        </p>
-    </div>
-</section>
+<!-- WORK TIMELINE -->
+<section id="work" class="py-20">
+    <div class="max-w-4xl mx-auto px-6 fade-in">
+        <h2 class="text-4xl mb-10">Work</h2>
 
-<!-- QUOTE -->
-<section class="section text-white">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="absolute w-full h-full object-cover">
-    <div class="overlay"></div>
+        <div class="timeline space-y-10">
 
-    <div class="relative z-10 max-w-3xl px-6 fade-in">
-        <p class="text-2xl italic">
-            “The environment is where we all meet; where we all have a mutual interest.”
-        </p>
-    </div>
-</section>
+            <div class="timeline-item">
+                <p class="text-sm text-gray-400">2023 – Present</p>
+                <h3 class="font-bold text-xl">Organization / Role</h3>
+                <p class="text-gray-600">
+                    Working on climate resilience, community engagement, and sustainability initiatives.
+                </p>
+            </div>
 
-<!-- CONTACT -->
-<section class="section bg-white">
-    <div class="fade-in">
-        <h2 class="text-4xl mb-6">Let’s Connect</h2>
-        <p class="text-gray-600 mb-6">
-            Open to collaborations, research, and conversations.
-        </p>
+            <div class="timeline-item">
+                <p class="text-sm text-gray-400">2021 – 2023</p>
+                <h3 class="font-bold text-xl">Previous Role</h3>
+                <p class="text-gray-600">
+                    Focused on governance frameworks and environmental policy implementation.
+                </p>
+            </div>
 
-        <div class="flex justify-center space-x-6 text-2xl">
-            <a href="#">✉️</a>
-            <a href="#">🌍</a>
-            <a href="#">🤝</a>
         </div>
     </div>
 </section>
 
-<!-- SCRIPT -->
+<!-- EDUCATION -->
+<section id="education" class="py-20 bg-green-50">
+    <div class="max-w-4xl mx-auto px-6 fade-in">
+        <h2 class="text-4xl mb-10">Education</h2>
+
+        <div class="timeline space-y-10">
+
+            <div class="timeline-item">
+                <p class="text-sm text-gray-400">Year</p>
+                <h3 class="font-bold text-xl">Degree</h3>
+                <p class="text-gray-600">Institution</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="py-20">
+    <div class="max-w-4xl mx-auto px-6 fade-in">
+        <h2 class="text-4xl mb-10">Publications</h2>
+
+        <ul class="space-y-4 text-gray-600">
+            <li>• Title of paper / article</li>
+            <li>• Another publication</li>
+        </ul>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 text-center text-gray-400 text-sm">
+    © 2026 Your Name
+</footer>
+
+<!-- ANIMATION SCRIPT -->
 <script>
 const faders = document.querySelectorAll('.fade-in');
 
