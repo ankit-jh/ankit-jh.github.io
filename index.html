@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title> Ankit Jha| Climate, Communities & Governance</title>
+<title>Ankit Jha | Climate, Communities & Governance</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -35,6 +35,14 @@ h1, h2 {
 }
 .nav-link:hover::after {
     width: 100%;
+}
+
+/* Logo animation */
+.nav-logo {
+    transition: transform 0.3s ease;
+}
+.nav-logo:hover {
+    transform: rotate(-6deg) scale(1.08);
 }
 
 /* Timeline */
@@ -75,16 +83,22 @@ h1, h2 {
 <header class="fixed w-full z-50 bg-white/80 backdrop-blur border-b">
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
 
-        <!-- Left: Name + Icon -->
-        <div class="flex items-center space-x-3 text-xl font-semibold">
+        <!-- Logo + Name -->
+        <div class="flex items-center space-x-3">
 
-            <!-- Icon -->
-            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-green-100 text-green-700 text-xl shadow-sm">
-                🌿
+            <!-- Custom Logo -->
+            <div class="w-10 h-10">
+                <svg width="42" height="42" viewBox="0 0 100 100" class="nav-logo">
+                    <circle cx="50" cy="50" r="45" fill="#dcfce7"/>
+                    <path d="M50 30 C65 30, 70 50, 50 70 C30 50, 35 30, 50 30 Z" fill="#15803d"/>
+                    <text x="50%" y="55%" text-anchor="middle" fill="#065f46"
+                          font-size="28" font-family="Inter, sans-serif" font-weight="600">
+                        AJ
+                    </text>
+                </svg>
             </div>
 
-            <!-- Name -->
-            <span class="tracking-tight">Ankit Jha</span>
+            <span class="text-xl font-semibold tracking-tight">Ankit Jha</span>
         </div>
 
         <!-- Nav -->
@@ -104,14 +118,15 @@ h1, h2 {
 <!-- HERO -->
 <section class="h-screen relative flex items-center justify-center text-center text-white">
 
-    <img src="https://www.pexels.com/photo/village-in-forest-19236329/" 
-         class="absolute w-full h-full object-cover">
+    <!-- Background Image (WORKING LINK) -->
+   <img src="https://images.pexels.com/photos/19236329/pexels-photo-19236329.jpeg?auto=compress&cs=tinysrgb&w=1600"
+     class="absolute w-full h-full object-cover">
 
     <div class="absolute inset-0 bg-black/40"></div>
 
     <div class="relative z-10 px-6 fade-in">
         <h1 class="text-5xl md:text-7xl mb-6">
-            ANKIT JHA
+            Ankit Jha
         </h1>
 
         <p class="text-xl md:text-2xl text-gray-200 mb-6">
@@ -119,7 +134,7 @@ h1, h2 {
         </p>
 
         <p class="italic text-gray-300 max-w-xl mx-auto">
-            Working at the intersection of people, policy and planet.
+            Working at the intersection of people, policy, and planet.
         </p>
     </div>
 </section>
@@ -128,6 +143,7 @@ h1, h2 {
 <section id="about" class="py-20 bg-green-50">
     <div class="max-w-4xl mx-auto px-6 fade-in">
         <h2 class="text-4xl mb-6">About</h2>
+
         <p class="text-lg text-gray-600 leading-relaxed mb-6">
             I work on climate action through the lens of communities and governance. My focus lies in building pathways where sustainability aligns with social equity and local realities.
         </p>
@@ -141,7 +157,7 @@ h1, h2 {
     </div>
 </section>
 
-<!-- WORK TIMELINE -->
+<!-- WORK -->
 <section id="work" class="py-20">
     <div class="max-w-4xl mx-auto px-6 fade-in">
         <h2 class="text-4xl mb-10">Work</h2>
@@ -199,10 +215,10 @@ h1, h2 {
 
 <!-- FOOTER -->
 <footer class="py-10 text-center text-gray-400 text-sm">
-    © 2026 Your Name
+    © 2026 Ankit Jha
 </footer>
 
-<!-- ANIMATION SCRIPT -->
+<!-- SCRIPT -->
 <script>
 const faders = document.querySelectorAll('.fade-in');
 
