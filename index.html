@@ -7,14 +7,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
-    
+    #home {
+    background-image: url("https://www.transparenttextures.com/patterns/pinstripe-light.png"), 
+                      radial-gradient(circle at top right, #f7f9f7, #ffffff);
+    position: relative;
+}
     :root {
     --climate-primary: #064e3b; /* Deep Emerald for Headings */
     --earth-accent: #2d5a27;   /* Forest Green for Links */
     --mist-bg: #f7f9f7;        /* Very light green-grey for section backgrounds */
 }
 
-h2 { border-bottom: 2px solid var(--earth-accent); padding-bottom: 8px; }
+h2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+h2::after {
+    content: "";
+    flex: 1;
+    margin-left: 1.5rem;
+    height: 1px;
+    background: linear-gradient(to right, #2d5a27, transparent);
+}
 .nav-link:hover { color: var(--earth-accent) !important; }
     /* 1. Earth-toned Palette and Professional Fonts */
     body { 
@@ -98,13 +116,10 @@ h2 { border-bottom: 2px solid var(--earth-accent); padding-bottom: 8px; }
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="grid md:grid-cols-3 gap-12 items-start">
                 <h2 class="text-4xl font-bold border-b-4 border-teal-600 w-fit pb-2">About Me</h2>
-                <div class="md:col-span-2 text-lg text-gray-600 leading-relaxed">
-                    <p class="mb-6">I am a PhD Research Scholar in the <strong>Department of Artificial Intelligence</strong> at IIT Kharagpur, advised by Prof. Prabhat Kumar Mishra. I work at the RHPI Lab focusing on the intersection of Reinforcement Learning, Estimation, and Optimization.</p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-1 bg-white border border-gray-200 rounded-full text-sm">Reinforcement Learning</span>
-                        <span class="px-4 py-1 bg-white border border-gray-200 rounded-full text-sm">Optimization</span>
-                        <span class="px-4 py-1 bg-white border border-gray-200 rounded-full text-sm">Computer Vision</span>
-                        <span class="px-4 py-1 bg-white border border-gray-200 rounded-full text-sm">Robotics</span>
+               <div class="mb-12">
+    <h2 class="text-3xl font-serif text-emerald-900 tracking-tight">Institutional Resilience</h2>
+    <p class="text-emerald-700 font-medium text-sm uppercase tracking-widest mt-2">Governance & Urban Planning</p>
+</div>
                     </div>
                 </div>
             </div>
