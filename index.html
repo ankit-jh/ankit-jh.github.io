@@ -172,13 +172,15 @@ Working at the intersection of people, policy and planet.
 <i data-lucide="mail"></i>
 </a>
 
-<a href="#">
+<a href="https://linkedin.com/in/yourprofile" target="_blank">
 <i data-lucide="linkedin"></i>
 </a>
 
-<a href="#">
+<a href="https://researchgate.net/profile/yourprofile" target="_blank">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" class="w-5 h-5">
 </a>
+
+</div>
 
 </div>
 
@@ -264,21 +266,55 @@ I work at the intersection of climate action, community engagement, and governan
 
 <script>
 
+<script>
+
+/* THEME TOGGLE */
 function toggleTheme(){
 document.body.classList.toggle('dark');
+updateIcons();
+}
+
+/* ICON RENDER FUNCTION */
+function updateIcons(){
 const icon=document.getElementById("themeIcon");
+
 icon.setAttribute("data-lucide",
 document.body.classList.contains('dark')?"moon":"sun");
+
 lucide.createIcons();
 }
 
-window.onload=function(){
-lucide.createIcons();
+/* LOAD FIX */
+window.addEventListener("DOMContentLoaded",()=>{
+updateIcons();
+});
+
+/* SCROLL ACTIVE NAV */
+const sections=document.querySelectorAll("section[id]");
+const navLinks=document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll",()=>{
+let current="";
+sections.forEach(section=>{
+if(window.scrollY>=section.offsetTop-120){
+current=section.id;
 }
+});
+navLinks.forEach(link=>{
+link.classList.remove("active");
+if(link.getAttribute("href")==="#"+current){
+link.classList.add("active");
+}
+});
+});
 
 /* FADE */
 const obs=new IntersectionObserver(e=>{
-e.forEach(x=>x.isIntersecting && x.target.classList.add("show"));
+e.forEach(x=>{
+if(x.isIntersecting){
+x.target.classList.add("show");
+}
+});
 });
 document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 
