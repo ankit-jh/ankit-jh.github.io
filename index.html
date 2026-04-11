@@ -30,7 +30,6 @@ body {
     background: #f7f7f5;
     background-image: url("https://www.transparenttextures.com/patterns/noise.png");
     color: var(--text-primary);
-    line-height: 1.6;
     transition: 0.3s;
 }
 
@@ -39,7 +38,7 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
 }
 
-/* NAVBAR */
+/* NAV */
 header {
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(10px);
@@ -48,18 +47,16 @@ header {
     background: rgba(30,41,59,0.85);
 }
 
-/* NAV LINKS */
 .nav-link {
     position: relative;
     font-size: 18px;
     color: var(--text-primary);
-    padding-bottom: 4px;
 }
 
 .nav-link::after {
     content:'';
     position:absolute;
-    bottom:0;
+    bottom:-4px;
     left:0;
     width:0;
     height:2px;
@@ -74,19 +71,6 @@ header {
 /* SECTIONS */
 .section {
     padding: 100px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-.dark .section {
-    border-color: rgba(255,255,255,0.08);
-}
-
-.section-title {
-    font-size: 30px;
-    font-weight: 600;
-}
-
-p {
-    color: var(--text-secondary);
 }
 
 /* CARDS */
@@ -94,7 +78,6 @@ p {
     padding: 24px;
     border-radius: 14px;
     background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(6px);
     border: 1px solid #e5e7eb;
     transition: 0.3s;
 }
@@ -106,32 +89,32 @@ p {
 
 .dark .card {
     background: rgba(51,65,85,0.7);
-    border-color: #475569;
 }
 
 /* TIMELINE */
-.timeline-card {
+.timeline {
     border-left: 4px solid var(--accent);
     padding-left: 18px;
 }
 
-/* HERO */
-.hero-text {
-    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
-}
-
-/* HERO ICON FIX */
+/* HERO ICONS */
 .hero-icons i,
 .hero-icons img {
     color: white !important;
     filter: brightness(0) invert(1);
 }
 
+/* ICON SIZE */
+i {
+    width: 26px;
+    height: 26px;
+}
+
 /* FADE */
 .fade {
     opacity: 0;
     transform: translateY(20px);
-    transition: 0.6s ease;
+    transition: 0.6s;
 }
 .fade.show {
     opacity: 1;
@@ -143,9 +126,8 @@ p {
 
 <body>
 
-<!-- NAVBAR -->
-<header class="fixed w-full border-b flex justify-center items-center h-20 z-50">
-
+<!-- NAV -->
+<header class="fixed w-full flex justify-center items-center h-20 z-50">
 <div class="absolute left-6 text-2xl">🌤️</div>
 
 <nav class="space-x-10">
@@ -154,7 +136,7 @@ p {
 <a href="#education" class="nav-link">Education</a>
 <a href="#publications" class="nav-link">Publications</a>
 <a href="#contact" class="nav-link">Contact</a>
-<a href="your_cv.pdf" target="_blank" class="px-4 py-2 border rounded-full">CV</a>
+<a href="#" class="px-4 py-2 border rounded-full">CV</a>
 </nav>
 
 <div class="absolute right-6">
@@ -162,7 +144,6 @@ p {
 <i id="themeIcon" data-lucide="sun"></i>
 </button>
 </div>
-
 </header>
 
 <!-- HERO -->
@@ -173,23 +154,27 @@ class="absolute w-full h-full object-cover">
 
 <div class="absolute inset-0 bg-black/60"></div>
 
-<div class="relative hero-text px-6">
-<h1 class="text-6xl mb-4 font-semibold">Ankit Jha</h1>
+<div class="relative">
+<h1 class="text-6xl mb-4">Ankit Jha</h1>
 
-<p class="text-green-300 text-xl mb-4">
+<p class="text-green-300 text-xl">
 Climate Action • Communities • Governance
 </p>
 
-<p class="italic text-gray-200 max-w-xl mx-auto">
-Working at the intersection of people, policy, and planet.
+<p class="italic mt-4">
+Working at the intersection of people, policy and planet.
 </p>
 
-<!-- ICONS FIXED -->
+<!-- FIXED ICONS -->
 <div class="flex justify-center space-x-6 mt-6 hero-icons">
 
-<a href="mailto:your@email.com"><i data-lucide="mail"></i></a>
+<a href="mailto:your@email.com">
+<i data-lucide="mail"></i>
+</a>
 
-<a href="#"><i data-lucide="linkedin"></i></a>
+<a href="#">
+<i data-lucide="linkedin"></i>
+</a>
 
 <a href="#">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" class="w-5 h-5">
@@ -201,120 +186,80 @@ Working at the intersection of people, policy, and planet.
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section fade">
-<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 px-6">
-
-<div class="section-title">About</div>
-
-<div class="md:col-span-2">
+<section id="about" class="section fade text-center max-w-3xl mx-auto">
+<h2 class="text-3xl mb-6">About</h2>
 <p>
-I work at the intersection of climate action, community engagement, and governance, focusing on designing pathways that are environmentally sustainable and socially equitable.
+I work at the intersection of climate action, community engagement, and governance, focusing on sustainable and equitable pathways.
 </p>
-
-<p class="mt-4">
-My work spans research, policy, and field-based interventions, engaging with institutions and communities to translate ideas into meaningful impact.
-</p>
-
-<p class="mt-4">
-I am particularly interested in how local contexts shape climate responses and governance systems.
-</p>
-</div>
-
-</div>
 </section>
 
 <!-- WORK -->
-<section id="work" class="section">
-<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 px-6">
+<section id="work" class="section max-w-5xl mx-auto fade">
+<h2 class="text-3xl mb-8">Work</h2>
 
-<div class="section-title">Work</div>
+<div class="space-y-6">
 
-<div class="md:col-span-2 space-y-8">
-
-<div class="card timeline-card fade">
-<h3 class="font-semibold text-lg">Organisation Name</h3>
+<div class="card timeline">
+<h3>Organisation Name</h3>
 <p class="text-sm">Role · 2023–Present</p>
-<p class="mt-3">Leading climate initiatives and community adaptation work.</p>
+<p>Climate resilience initiatives.</p>
 </div>
 
-<div class="card timeline-card fade">
-<h3 class="font-semibold text-lg">Previous Organisation</h3>
+<div class="card timeline">
+<h3>Previous Organisation</h3>
 <p class="text-sm">Role · 2021–2023</p>
-<p class="mt-3">Worked on sustainability and governance frameworks.</p>
+<p>Policy and sustainability work.</p>
 </div>
 
-</div>
 </div>
 </section>
 
-<!-- INTERESTS -->
-<section class="section">
-<div class="max-w-6xl mx-auto px-6">
+<!-- INTERESTS (FIXED ICONS) -->
+<section class="section max-w-5xl mx-auto fade">
+<h2 class="text-3xl mb-10">Areas of Interest</h2>
 
-<h2 class="text-3xl font-semibold mb-12">Areas of Interest</h2>
+<div class="grid md:grid-cols-3 gap-6">
 
-<div class="grid md:grid-cols-3 gap-8">
+<div class="card"><i data-lucide="leaf"></i><h3>Climate</h3></div>
+<div class="card"><i data-lucide="users"></i><h3>Communities</h3></div>
+<div class="card"><i data-lucide="building"></i><h3>Governance</h3></div>
+<div class="card"><i data-lucide="map"></i><h3>Field Work</h3></div>
+<div class="card"><i data-lucide="bar-chart"></i><h3>Research</h3></div>
+<div class="card"><i data-lucide="brain"></i><h3>Systems</h3></div>
 
-<div class="card fade"><h3 class="font-semibold">Climate</h3><p>Adaptation & sustainability.</p></div>
-<div class="card fade"><h3 class="font-semibold">Communities</h3><p>Inclusive development.</p></div>
-<div class="card fade"><h3 class="font-semibold">Governance</h3><p>Policy systems.</p></div>
-<div class="card fade"><h3 class="font-semibold">Field Work</h3><p>On-ground execution.</p></div>
-<div class="card fade"><h3 class="font-semibold">Research</h3><p>Data insights.</p></div>
-<div class="card fade"><h3 class="font-semibold">Systems</h3><p>Interdisciplinary thinking.</p></div>
-
-</div>
 </div>
 </section>
 
 <!-- EDUCATION -->
-<section id="education" class="section">
-<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 px-6">
+<section id="education" class="section max-w-5xl mx-auto fade">
+<h2 class="text-3xl mb-8">Education</h2>
 
-<div class="section-title">Education</div>
+<div class="space-y-6">
 
-<div class="md:col-span-2 space-y-6">
-
-<div class="card timeline-card fade">
-<h3 class="font-semibold text-lg">Degree Name</h3>
-<p class="text-sm">Institution · Year</p>
-</div>
-
-<div class="card timeline-card fade">
-<h3 class="font-semibold text-lg">Previous Degree</h3>
-<p class="text-sm">Institution · Year</p>
-</div>
-
+<div class="card timeline">
+<h3>Degree</h3>
+<p>Institution · Year</p>
 </div>
 
 </div>
 </section>
 
-<!-- PUBLICATIONS -->
-<section id="publications" class="section">
-<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 px-6">
+<!-- PUBLICATIONS (FIXED) -->
+<section id="publications" class="section max-w-5xl mx-auto fade">
+<h2 class="text-3xl mb-8">Publications</h2>
 
-<div class="section-title">Publications</div>
-
-<div class="md:col-span-2 space-y-6">
-
-<a href="#" class="card fade">
-<h3 class="font-semibold text-lg">Paper Title</h3>
-<p class="text-sm">Journal · Year</p>
-<p class="mt-2 text-sm">Short summary of research.</p>
+<a href="#" class="card block">
+<h3>Paper Title</h3>
+<p>Journal · Year</p>
+<p class="text-sm mt-2">Click to read →</p>
 </a>
 
-</div>
-
-</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section text-center fade">
-
-<h2 class="text-2xl mb-4 font-semibold">Contact</h2>
-
+<h2 class="text-2xl mb-4">Contact</h2>
 <p>your@email.com</p>
-
 </section>
 
 <script>
@@ -322,10 +267,8 @@ I am particularly interested in how local contexts shape climate responses and g
 function toggleTheme(){
 document.body.classList.toggle('dark');
 const icon=document.getElementById("themeIcon");
-
 icon.setAttribute("data-lucide",
 document.body.classList.contains('dark')?"moon":"sun");
-
 lucide.createIcons();
 }
 
@@ -333,34 +276,11 @@ window.onload=function(){
 lucide.createIcons();
 }
 
-/* NAV ACTIVE */
-const sections=document.querySelectorAll("section[id]");
-const navLinks=document.querySelectorAll(".nav-link");
-
-window.addEventListener("scroll",()=>{
-let current="";
-sections.forEach(section=>{
-if(window.scrollY>=section.offsetTop-120){
-current=section.id;
-}
-});
-navLinks.forEach(link=>{
-link.classList.remove("active");
-if(link.getAttribute("href")==="#"+current){
-link.classList.add("active");
-}
-});
-});
-
 /* FADE */
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
+const obs=new IntersectionObserver(e=>{
+e.forEach(x=>x.isIntersecting && x.target.classList.add("show"));
 });
-});
-document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 
 </script>
 
