@@ -36,9 +36,27 @@ header {
 
 /* NAV LINKS */
 .nav-link {
+    position: relative;
     font-size: 18px;
     color: #374151;
+    padding-bottom: 4px;
 }
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #16a34a;
+    transition: width 0.3s ease;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
 .dark .nav-link {
     color: #e2e8f0;
 }
@@ -75,8 +93,10 @@ p {
     border: 1px solid #e5e7eb;
     transition: 0.3s;
 }
+
 .card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
 .dark .card {
     background: #334155;
@@ -90,7 +110,28 @@ p {
 
 </style>
 </head>
+<script>
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
 
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
 <body>
 
 <!-- NAVBAR -->
@@ -198,36 +239,44 @@ Clear, impact-focused description of your work.
 <section class="section">
 <div class="max-w-6xl mx-auto px-6">
 
-<h2 class="text-2xl mb-10 font-semibold">Areas of Interest</h2>
+<div class="mb-10">
+    <h2 class="text-3xl font-semibold">Areas of Interest</h2>
+</div>
 
 <div class="grid md:grid-cols-3 gap-6">
 
 <div class="card">
+<div class="text-3xl mb-3">🌱</div>
 <h3 class="font-semibold mb-2">Climate & Sustainability</h3>
 <p>Adaptation, resilience, and sustainable development.</p>
 </div>
 
 <div class="card">
+<div class="text-3xl mb-3">🤝</div>
 <h3 class="font-semibold mb-2">Communities & Development</h3>
 <p>Grassroots engagement and inclusive growth.</p>
 </div>
 
 <div class="card">
+<div class="text-3xl mb-3">🏛️</div>
 <h3 class="font-semibold mb-2">Governance & Policy</h3>
 <p>Institutional design and policy frameworks.</p>
 </div>
 
 <div class="card">
+<div class="text-3xl mb-3">🚜</div>
 <h3 class="font-semibold mb-2">Field Implementation</h3>
 <p>On-ground execution across geographies.</p>
 </div>
 
 <div class="card">
+<div class="text-3xl mb-3">📊</div>
 <h3 class="font-semibold mb-2">Research & Analysis</h3>
 <p>Data-driven insights and evaluation.</p>
 </div>
 
 <div class="card">
+<div class="text-3xl mb-3">💡</div>
 <h3 class="font-semibold mb-2">Systems Thinking</h3>
 <p>Interdisciplinary problem-solving approaches.</p>
 </div>
