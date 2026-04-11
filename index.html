@@ -43,6 +43,7 @@ header {
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(10px);
 }
+
 .dark header {
     background: rgba(30,41,59,0.85);
 }
@@ -132,11 +133,11 @@ i {
 
 <nav class="space-x-10">
 <a href="#about" class="nav-link">About</a>
-<a href="#work" class="nav-link">Work</a>
+<a href="#work" class="nav-link">Experience</a>
 <a href="#education" class="nav-link">Education</a>
 <a href="#publications" class="nav-link">Publications</a>
 <a href="#contact" class="nav-link">Contact</a>
-<a href="#" class="px-4 py-2 border rounded-full">CV</a>
+<a href="your_cv.pdf" target="_blank" class="px-4 py-2 border rounded-full">Download CV</a>
 </nav>
 
 <div class="absolute right-6">
@@ -154,18 +155,17 @@ class="absolute w-full h-full object-cover">
 
 <div class="absolute inset-0 bg-black/60"></div>
 
-<div class="relative">
+<div class="relative px-6">
 <h1 class="text-6xl mb-4">Ankit Jha</h1>
 
 <p class="text-green-300 text-xl">
 Climate Action • Communities • Governance
 </p>
 
-<p class="italic mt-4">
-Working at the intersection of people, policy and planet.
+<p class="italic mt-4 max-w-xl mx-auto">
+Designing climate and development solutions at the intersection of policy, institutions, and communities across diverse geographies.
 </p>
 
-<!-- FIXED ICONS -->
 <div class="flex justify-center space-x-6 mt-6 hero-icons">
 
 <a href="mailto:your@email.com">
@@ -183,51 +183,60 @@ Working at the intersection of people, policy and planet.
 </div>
 
 </div>
-
-</div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section fade text-center max-w-3xl mx-auto">
+<section id="about" class="section max-w-4xl mx-auto text-center fade">
 <h2 class="text-3xl mb-6">About</h2>
+
 <p>
-I work at the intersection of climate action, community engagement, and governance, focusing on sustainable and equitable pathways.
+I work at the intersection of climate action, governance, and community systems, focusing on translating policy into implementation across diverse contexts.
 </p>
+
+<p class="mt-4">
+My experience spans research, program design, and field implementation, engaging institutions and communities to build scalable solutions.
+</p>
+
 </section>
 
-<!-- WORK -->
+<!-- EXPERIENCE -->
 <section id="work" class="section max-w-5xl mx-auto fade">
-<h2 class="text-3xl mb-8">Work</h2>
+<h2 class="text-3xl mb-8">Experience</h2>
 
 <div class="space-y-6">
 
 <div class="card timeline">
 <h3>Organisation Name</h3>
 <p class="text-sm">Role · 2023–Present</p>
-<p>Climate resilience initiatives.</p>
+<ul class="mt-3 list-disc ml-5 text-sm">
+<li>Led climate resilience initiatives</li>
+<li>Worked with communities and institutions</li>
+</ul>
 </div>
 
 <div class="card timeline">
 <h3>Previous Organisation</h3>
 <p class="text-sm">Role · 2021–2023</p>
-<p>Policy and sustainability work.</p>
+<ul class="mt-3 list-disc ml-5 text-sm">
+<li>Policy and sustainability research</li>
+</ul>
 </div>
 
 </div>
 </section>
 
-<!-- INTERESTS (FIXED ICONS) -->
+<!-- INTERESTS -->
 <section class="section max-w-5xl mx-auto fade">
 <h2 class="text-3xl mb-10">Areas of Interest</h2>
 
 <div class="grid md:grid-cols-3 gap-6">
 
-<div class="card"><i data-lucide="leaf"></i><h3>Climate</h3></div>
-<div class="card"><i data-lucide="users"></i><h3>Communities</h3></div>
-<div class="card"><i data-lucide="building"></i><h3>Governance</h3></div>
-<div class="card"><i data-lucide="map"></i><h3>Field Work</h3></div>
-<div class="card"><i data-lucide="bar-chart"></i><h3>Research</h3></div>
-<div class="card"><i data-lucide="brain"></i><h3>Systems</h3></div>
+<div class="card"><i data-lucide="leaf"></i><h3 class="mt-2">Climate</h3><p class="text-sm">Adaptation & sustainability</p></div>
+<div class="card"><i data-lucide="users"></i><h3 class="mt-2">Communities</h3><p class="text-sm">Inclusive development</p></div>
+<div class="card"><i data-lucide="building"></i><h3 class="mt-2">Governance</h3><p class="text-sm">Policy systems</p></div>
+<div class="card"><i data-lucide="map"></i><h3 class="mt-2">Field Work</h3><p class="text-sm">Implementation</p></div>
+<div class="card"><i data-lucide="bar-chart-3"></i><h3 class="mt-2">Research</h3><p class="text-sm">Data insights</p></div>
+<div class="card"><i data-lucide="brain"></i><h3 class="mt-2">Systems</h3><p class="text-sm">Systems thinking</p></div>
 
 </div>
 </section>
@@ -239,20 +248,20 @@ I work at the intersection of climate action, community engagement, and governan
 <div class="space-y-6">
 
 <div class="card timeline">
-<h3>Degree</h3>
+<h3>Degree Name</h3>
 <p>Institution · Year</p>
 </div>
 
 </div>
 </section>
 
-<!-- PUBLICATIONS (FIXED) -->
+<!-- PUBLICATIONS -->
 <section id="publications" class="section max-w-5xl mx-auto fade">
 <h2 class="text-3xl mb-8">Publications</h2>
 
 <a href="#" class="card block">
 <h3>Paper Title</h3>
-<p>Journal · Year</p>
+<p class="text-sm">Journal · Year</p>
 <p class="text-sm mt-2">Click to read →</p>
 </a>
 
@@ -266,30 +275,22 @@ I work at the intersection of climate action, community engagement, and governan
 
 <script>
 
-<script>
-
-/* THEME TOGGLE */
-function toggleTheme(){
-document.body.classList.toggle('dark');
-updateIcons();
-}
-
-/* ICON RENDER FUNCTION */
+/* ICON FIX */
 function updateIcons(){
-const icon=document.getElementById("themeIcon");
-
-icon.setAttribute("data-lucide",
-document.body.classList.contains('dark')?"moon":"sun");
-
 lucide.createIcons();
 }
 
-/* LOAD FIX */
-window.addEventListener("DOMContentLoaded",()=>{
+/* THEME */
+function toggleTheme(){
+document.body.classList.toggle('dark');
+document.getElementById("themeIcon").setAttribute("data-lucide",
+document.body.classList.contains('dark')?"moon":"sun");
 updateIcons();
-});
+}
 
-/* SCROLL ACTIVE NAV */
+window.addEventListener("DOMContentLoaded",updateIcons);
+
+/* NAV ACTIVE */
 const sections=document.querySelectorAll("section[id]");
 const navLinks=document.querySelectorAll(".nav-link");
 
