@@ -145,7 +145,7 @@ window.addEventListener("scroll", () => {
 <!-- NAVBAR -->
 <header class="fixed w-full border-b flex justify-center items-center h-20 z-50">
 
-<div class="absolute left-6 text-2xl">🌤️</div>
+<div class="absolute left-6 text-2xl"></div>
 
 <nav class="space-x-10">
 <a href="#about" class="nav-link">About</a>
@@ -161,18 +161,18 @@ CV
 </nav>
 
 <!-- TOGGLE BUTTON -->
-<div class="absolute right-6 flex space-x-3 text-xl">
+<div class="absolute right-6 flex space-x-4 items-center">
 
-<button onclick="setLightMode()" type="button" title="Light mode">
-    🌞
+<button onclick="setLightMode()" type="button">
+    <i data-lucide="sun" class="w-5 h-5"></i>
 </button>
 
-<button onclick="setDarkMode()" type="button" title="Dark mode">
-    🌙
+<button onclick="setDarkMode()" type="button">
+    <i data-lucide="moon" class="w-5 h-5"></i>
 </button>
 
 </div>
-
+    
 </header>
 
 <!-- HERO -->
@@ -196,10 +196,25 @@ Working at the intersection of people, policy, and planet.
 
 <div class="mt-6 flex justify-center space-x-6 text-lg">
 
-<a href="mailto:your@email.com">✉️</a>
-<a href="https://linkedin.com" target="_blank">in</a>
-<a href="https://instagram.com" target="_blank">📷</a>
-<a href="https://researchgate.net" target="_blank">RG</a>
+<div class="flex justify-center space-x-6 mt-6">
+
+<a href="mailto:your@email.com">
+    <i data-lucide="mail" class="w-5 h-5"></i>
+</a>
+
+<a href="https://linkedin.com" target="_blank">
+    <i data-lucide="linkedin" class="w-5 h-5"></i>
+</a>
+
+<a href="https://instagram.com" target="_blank">
+    <i data-lucide="instagram" class="w-5 h-5"></i>
+</a>
+
+<a href="https://researchgate.net" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" class="w-5 h-5">
+</a>
+
+</div>
 
 </div>
 
@@ -371,4 +386,7 @@ window.onload = function() {
 </script>
 
 </body>
+    <script>
+lucide.createIcons();
+</script>
 </html>
