@@ -3,380 +3,1110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankit Jha — Climate Policy Professional</title>
 
-<title>Ankit Jha</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+/* ---- RESET & ROOT ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* COLOR SYSTEM */
 :root {
-    --text-primary: #1b4332;
-    --text-secondary: #344e41;
-    --accent: #2d6a4f;
+  --forest:   #1b4332;
+  --moss:     #2d6a4f;
+  --sage:     #52796f;
+  --mist:     #a8c5b8;
+  --fog:      #d8e8e2;
+  --paper:    #f5f3ef;
+  --ink:      #1a1a18;
+  --ink2:     #3d3d39;
+  --ink3:     #787870;
+  --gold:     #c5a84b;
+  --white:    #ffffff;
+  --nav-h:    72px;
+  --sans:     'DM Sans', sans-serif;
+  --serif:    'Cormorant Garamond', serif;
 }
 
-.dark {
-    --text-primary: #fef9c3;
-    --text-secondary: #e2e8f0;
-    --accent: #86efac;
-}
-
-/* BASE */
 body {
-    font-family: Inter, sans-serif;
-    background: #f7f7f5;
-    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
-    color: var(--text-primary);
-    transition: 0.3s;
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
 }
 
-.dark {
-    background: #1e293b;
-    background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
+/* ---- NAV ---- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  background: rgba(245,243,239,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--fog);
+  z-index: 100;
+  transition: background 0.3s;
 }
 
-h1, h2, h3 {
-    letter-spacing: -0.02em;
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--forest);
+  letter-spacing: 0.02em;
 }
 
-/* NAV */
-header {
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(10px);
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
 }
 
-.dark header {
-    background: rgba(30,41,59,0.85);
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-.nav-link {
-    position: relative;
-    font-size: 16px;
-    color: var(--text-primary);
+.nav-links a:hover { color: var(--forest); }
+
+.nav-links a.active { color: var(--forest); border-bottom: 1px solid var(--forest); padding-bottom: 2px; }
+
+.nav-cv {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  background: var(--forest);
+  padding: 8px 20px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s !important;
+}
+.nav-cv:hover { background: var(--moss) !important; color: var(--white) !important; }
+
+.nav-theme {
+  background: none;
+  border: 1px solid var(--fog);
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: var(--ink2);
+  transition: border-color 0.2s;
+}
+.nav-theme:hover { border-color: var(--sage); }
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-.nav-link::after {
-    content:'';
-    position:absolute;
-    bottom:-4px;
-    left:0;
-    width:0;
-    height:2px;
-    background:var(--accent);
-    transition:0.3s;
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.pexels.com/photos/19236329/pexels-photo-19236329.jpeg?auto=compress&w=1600');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  transition: transform 8s ease-out;
 }
 
-.nav-link.active::after {
-    width:100%;
+.hero-bg.loaded { transform: scale(1); }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(20,40,30,0.68) 0%, rgba(20,40,30,0.74) 100%);
 }
 
-/* SECTIONS */
-.section {
-    padding: 80px 0;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 0 32px;
+  animation: heroIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* CARDS */
-<section class="section">
-<div class="max-w-6xl mx-auto px-6">
-
-<h2 class="text-3xl font-semibold mb-12">Areas of Interest</h2>
-
-<div class="grid md:grid-cols-3 gap-8">
-
-<div class="card">
-<i data-lucide="leaf"></i>
-<h3 class="mt-4 font-semibold text-lg" style="color:var(--text-primary);">Climate & Sustainability</h3>
-<p class="mt-2 text-sm">Climate adaptation and resilience pathways.</p>
-</div>
-
-<div class="card">
-<i data-lucide="users"></i>
-<h3 class="mt-4 font-semibold text-lg" style="color:var(--text-primary);">Communities</h3>
-<p class="mt-2 text-sm">Inclusive growth and grassroots engagement.</p>
-</div>
-
-<div class="card">
-<i data-lucide="building"></i>
-<h3 class="mt-4 font-semibold text-lg" style="color:var(--text-primary);">Governance</h3>
-<p class="mt-2 text-sm">Policy design and institutional frameworks.</p>
-</div>
-
-<div class="card">
-<i data-lucide="map"></i>
-<h3 class="mt-4 font-semibold text-lg" style="color:var(--text-primary);">Field Work</h3>
-<p class="mt-2 text-sm">On-ground program implementation.</p>
-</div>
-
-<div class="card">
-<i data-lucide="bar-chart-3"></i>
-<h3 class="mt-4 font-semibold text-lg" style="color:var(--text-primary);">Research</h3>
-<p class="mt-2 text-sm">Data-driven insights and evaluation.</p>
-</div>
-
-<div class="card">
-<i data-lucide="brain"></i>
-<h3 class="mt-4 font-semibold text-lg" style="color:var(--text-primary);">Systems Thinking</h3>
-<p class="mt-2 text-sm">Interdisciplinary problem-solving.</p>
-</div>
-
-</div>
-</div>
-</section>
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* TIMELINE */
-.timeline {
-    border-left: 3px solid var(--accent);
-    padding-left: 16px;
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 24px;
 }
 
-/* HERO ICONS */
-.hero-icons i,
-.hero-icons img {
-    filter: brightness(0) invert(1);
+.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(52px, 8vw, 86px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
 }
 
-/* ICON SIZE */
-i {
-    width: 24px;
-    height: 24px;
+.hero-tagline {
+  font-family: var(--serif);
+  font-size: clamp(16px, 2.5vw, 21px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.6;
+  margin-bottom: 36px;
 }
 
-/* FADE */
+.hero-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 44px;
+}
+
+.pill {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mist);
+  border: 1px solid rgba(168,197,184,0.4);
+  padding: 6px 16px;
+  border-radius: 1px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: var(--white);
+  padding: 12px 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.hero-btn-primary:hover { background: var(--fog); }
+
+.hero-social {
+  display: flex;
+  gap: 16px;
+}
+
+.hero-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 2px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-icon:hover { border-color: var(--mist); background: rgba(255,255,255,0.08); }
+
+.scroll-cue {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.4);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: scrollBob 2s ease-in-out infinite;
+}
+
+@keyframes scrollBob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+}
+
+/* ---- SECTION COMMONS ---- */
+section {
+  padding: 96px 48px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 300;
+  color: var(--forest);
+  line-height: 1.15;
+  margin-bottom: 40px;
+}
+
+.section-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 48px;
+}
+
+/* ---- ABOUT ---- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-photo-wrap {
+  position: relative;
+}
+
+.about-photo-wrap::before {
+  content: '';
+  position: absolute;
+  top: 16px; left: 16px; right: -16px; bottom: -16px;
+  border: 1px solid var(--fog);
+  z-index: 0;
+}
+
+.about-photo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%);
+}
+
+.about-body p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--ink2);
+  margin-bottom: 20px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--fog);
+  margin-top: 40px;
+  border: 1px solid var(--fog);
+}
+
+.stat-cell {
+  background: var(--paper);
+  padding: 20px;
+}
+
+.stat-num {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--forest);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-top: 4px;
+}
+
+/* ---- EXPERIENCE ---- */
+#work { background: none; }
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--fog);
+}
+
+.exp-item:last-child { border-bottom: none; }
+
+.exp-meta {
+  padding-top: 4px;
+}
+
+.exp-period {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--ink3);
+  margin-bottom: 8px;
+}
+
+.exp-org-badge {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--moss);
+  background: var(--fog);
+  padding: 4px 10px;
+  border-radius: 1px;
+}
+
+.exp-role {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.exp-org {
+  font-size: 13px;
+  color: var(--ink3);
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+
+.exp-desc p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink2);
+  margin-bottom: 10px;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.tag {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  border: 1px solid var(--mist);
+  padding: 3px 10px;
+  border-radius: 1px;
+}
+
+/* ---- INTERESTS ---- */
+.interests-bg {
+  background: var(--forest);
+  margin: 0;
+  padding: 96px 48px;
+}
+
+.interests-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.interests-bg .section-label { color: var(--mist); }
+.interests-bg .section-title { color: var(--white); }
+.interests-bg .section-divider { background: var(--gold); }
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.12);
+}
+
+.interest-card {
+  background: rgba(255,255,255,0.04);
+  padding: 32px 28px;
+  transition: background 0.2s;
+}
+
+.interest-card:hover { background: rgba(255,255,255,0.09); }
+
+.interest-icon {
+  font-size: 24px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.interest-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.interest-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--mist);
+}
+
+/* ---- EDUCATION ---- */
+.edu-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--fog);
+}
+.edu-item:last-child { border-bottom: none; }
+
+.edu-year {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--mist);
+  padding-top: 4px;
+}
+
+.edu-degree {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.edu-inst {
+  font-size: 14px;
+  color: var(--sage);
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+
+.edu-note {
+  font-size: 13px;
+  color: var(--ink3);
+  line-height: 1.65;
+}
+
+/* ---- PUBLICATIONS ---- */
+.pub-section-bg {
+  background: #f0ede6;
+  margin: 0;
+  padding: 96px 48px;
+}
+
+.pub-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.pub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.pub-card {
+  background: var(--white);
+  border: 1px solid var(--fog);
+  padding: 28px;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.pub-card:hover {
+  border-color: var(--sage);
+  transform: translateY(-3px);
+}
+
+.pub-type {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 12px;
+}
+
+.pub-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.pub-meta {
+  font-size: 12px;
+  color: var(--ink3);
+  margin-bottom: 12px;
+}
+
+.pub-abstract {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.pub-link {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+
+/* ---- CONTACT ---- */
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contact-intro {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--forest);
+  line-height: 1.45;
+  margin-bottom: 24px;
+}
+
+.contact-note {
+  font-size: 14px;
+  color: var(--ink3);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--fog);
+}
+
+.contact-item:last-child { border-bottom: none; }
+
+.contact-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--fog);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--sage);
+  font-size: 16px;
+}
+
+.contact-detail-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 3px;
+}
+
+.contact-detail-val {
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.contact-detail-val a {
+  color: var(--moss);
+  text-decoration: none;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--fog);
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 1px;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus { border-color: var(--sage); }
+
+.contact-form textarea { height: 120px; resize: vertical; }
+
+.contact-form button {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--forest);
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+.contact-form button:hover { background: var(--moss); }
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  padding: 28px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+/* ---- FADE-IN ---- */
 .fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.6s;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.fade.show {
-    opacity: 1;
-    transform: none;
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* ---- DARK MODE ---- */
+body.dark {
+  background: #171c19;
+  color: #e8ede9;
+  --paper: #171c19;
+  --ink: #e8ede9;
+  --ink2: #b5c0b8;
+  --ink3: #7a8a7e;
+  --fog: rgba(255,255,255,0.08);
+}
+
+body.dark nav { background: rgba(23,28,25,0.92); border-color: rgba(255,255,255,0.06); }
+body.dark .about-photo-wrap::before { border-color: rgba(255,255,255,0.06); }
+body.dark .about-stats { background: rgba(255,255,255,0.04); }
+body.dark .stat-cell { background: #171c19; }
+body.dark .interests-bg { background: #0d1410; }
+body.dark .pub-section-bg { background: #12170f; }
+body.dark .pub-card { background: #1e2620; }
+body.dark .contact-form input, body.dark .contact-form textarea { background: #1e2620; color: #e8ede9; }
+body.dark .exp-org-badge { background: rgba(255,255,255,0.07); }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  section { padding: 64px 24px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .exp-item, .edu-item { grid-template-columns: 1fr; gap: 12px; }
+  .interests-grid { grid-template-columns: 1fr 1fr; }
+  .pub-grid { grid-template-columns: 1fr; }
+  .contact-wrap { grid-template-columns: 1fr; }
+  .interests-bg, .pub-section-bg { padding: 64px 24px; }
+}
 </style>
 </head>
 
 <body>
 
 <!-- NAV -->
-<header class="fixed w-full flex justify-center items-center h-20 z-50">
-<div class="absolute left-6 text-2xl">🌍</div>
-
-<nav class="space-x-8">
-<a href="#about" class="nav-link">About</a>
-<a href="#focus" class="nav-link">Focus</a>
-<a href="#work" class="nav-link">Experience</a>
-<a href="#writing" class="nav-link">Work</a>
-<a href="#engagements" class="nav-link">Engagements</a>
-<a href="#contact" class="nav-link">Contact</a>
-<a href="your_cv.pdf" target="_blank" class="px-4 py-2 border rounded-full">CV</a>
+<nav>
+  <span class="nav-logo">Ankit Jha</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="ankit_jha_cv.pdf" target="_blank" class="nav-cv">Download CV</a></li>
+  </ul>
+  <button class="nav-theme" onclick="toggleTheme()" title="Toggle theme">◐</button>
 </nav>
 
-<div class="absolute right-6">
-<button onclick="toggleTheme()">
-<i id="themeIcon" data-lucide="sun"></i>
-</button>
-</div>
-</header>
-
 <!-- HERO -->
-<section class="h-[80vh] flex items-center justify-center text-center text-white relative">
+<section class="hero" style="max-width:none; padding:0; margin:0;">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
 
-<img src="https://images.pexels.com/photos/19236329/pexels-photo-19236329.jpeg?auto=compress&w=1600"
-class="absolute w-full h-full object-cover">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Climate Policy · New Delhi</p>
+    <h1 class="hero-name">Ankit Jha</h1>
+    <p class="hero-tagline">Designing climate and development solutions at the intersection of policy, institutions, and communities across diverse geographies.</p>
 
-<div class="absolute inset-0 bg-black/60"></div>
+    <div class="hero-pills">
+      <span class="pill">Climate Action</span>
+      <span class="pill">Governance</span>
+      <span class="pill">Communities</span>
+      <span class="pill">Policy Design</span>
+    </div>
 
-<div class="relative px-6 max-w-2xl">
-<h1 class="text-5xl mb-4">Ankit Jha</h1>
+    <div class="hero-actions">
+      <a href="#about" class="hero-btn-primary">Explore Work</a>
+      <div class="hero-social">
+        <a href="mailto:your@email.com" class="hero-icon" title="Email">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="hero-icon" title="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://researchgate.net/profile/yourprofile" target="_blank" class="hero-icon" title="ResearchGate">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V10h2v6zm-1-7a1 1 0 110-2 1 1 0 010 2zm6 7h-2v-3.5c0-.83-.67-1.5-1.5-1.5S11 11.67 11 12.5V16H9v-6h2v.77c.46-.59 1.17-.77 1.5-.77 1.38 0 2.5 1.12 2.5 2.5V16z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
-<p class="text-green-300 text-lg">
-Climate Policy • Governance • Implementation
-</p>
-
-<p class="mt-6 leading-relaxed">
-I work on how climate policy translates into real-world implementation — across institutions, communities, and governance systems in emerging contexts.
-</p>
-
-<p class="italic mt-4 text-sm opacity-90">
-Experience across research, program design, and field-led climate initiatives.
-</p>
-
-<div class="flex justify-center space-x-6 mt-6 hero-icons">
-
-<a href="mailto:your@email.com">
-<i data-lucide="mail"></i>
-</a>
-
-<a href="https://linkedin.com/in/yourprofile" target="_blank">
-<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" class="w-5 h-5">
-</a>
-
-<a href="https://researchgate.net/profile/yourprofile" target="_blank">
-<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" class="w-5 h-5">
-</a>
-
-</div>
-</div>
+  <div class="scroll-cue">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section max-w-3xl mx-auto text-center fade">
-<h2 class="text-3xl mb-6">About</h2>
+<section id="about" class="fade">
+  <p class="section-label">About</p>
+  <h2 class="section-title">Where policy meets people</h2>
+  <div class="section-divider"></div>
 
-<p>
-I am a policy professional working at the intersection of climate action, governance, and institutional systems. My work focuses on bridging the gap between policy design and on-ground implementation.
-</p>
+  <div class="about-grid">
+    <div class="about-photo-wrap">
+      <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&w=600" alt="Ankit Jha" class="about-photo">
+    </div>
 
-<p class="mt-4">
-Across my experience, I have engaged with governments, research institutions, and communities to design and implement climate and development initiatives in diverse contexts.
-</p>
+    <div class="about-body">
+      <p>I work at the intersection of climate action, governance, and community systems — translating complex policy frameworks into implementation that is practical, equitable, and lasting.</p>
+      <p>My career spans research, program design, and field implementation across South and Southeast Asia. I engage governments, multilateral institutions, and grassroots communities alike, believing that durable climate solutions require coherence across all scales.</p>
+      <p>I am particularly drawn to questions of institutional design: how do we build the administrative capacity, financial mechanisms, and political legitimacy necessary for communities to lead their own climate transitions?</p>
 
-</section>
-
-<!-- CURRENT FOCUS -->
-<section id="focus" class="section max-w-4xl mx-auto fade">
-<h2 class="text-3xl mb-8 text-center">Current Focus</h2>
-
-<div class="grid md:grid-cols-3 gap-6">
-
-<div class="card">
-<h3>Climate Governance</h3>
-<p class="text-sm mt-2">Institutional design and policy implementation pathways</p>
-</div>
-
-<div class="card">
-<h3>Adaptation Systems</h3>
-<p class="text-sm mt-2">Community-led and locally grounded climate responses</p>
-</div>
-
-<div class="card">
-<h3>Policy → Practice</h3>
-<p class="text-sm mt-2">Bridging national frameworks with field realities</p>
-</div>
-
-</div>
+      <div class="about-stats">
+        <div class="stat-cell">
+          <div class="stat-num">7+</div>
+          <div class="stat-label">Years in climate policy</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">States & geographies</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Publications</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Organisations</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="work" class="section max-w-5xl mx-auto fade">
-<h2 class="text-3xl mb-8">Experience</h2>
+<section id="work" class="fade">
+  <p class="section-label">Experience</p>
+  <h2 class="section-title">Where I have worked</h2>
+  <div class="section-divider"></div>
 
-<div class="space-y-6">
+  <div class="exp-item">
+    <div class="exp-meta">
+      <p class="exp-period">2023 – Present</p>
+      <span class="exp-org-badge">Current Role</span>
+    </div>
+    <div class="exp-desc">
+      <h3 class="exp-role">Senior Associate — Climate Policy</h3>
+      <p class="exp-org">Organisation Name · New Delhi, India</p>
+      <p>Led design of climate resilience frameworks for state governments across India, coordinating between central ministries, district administrations, and frontline communities on adaptation planning and implementation.</p>
+      <p>Supported policy research on Just Transition pathways, contributing to national consultations on climate finance architecture and loss-and-damage mechanisms.</p>
+      <div class="exp-tags">
+        <span class="tag">Just Transition</span>
+        <span class="tag">State Policy</span>
+        <span class="tag">Climate Finance</span>
+        <span class="tag">Stakeholder Engagement</span>
+      </div>
+    </div>
+  </div>
 
-<div class="card timeline">
-<h3>Organisation Name</h3>
-<p class="text-sm">Role · 2023–Present</p>
-<ul class="mt-3 list-disc ml-5 text-sm">
-<li>Designed and implemented climate resilience initiatives across multiple regions</li>
-<li>Collaborated with institutions and community stakeholders for program delivery</li>
-</ul>
-</div>
+  <div class="exp-item">
+    <div class="exp-meta">
+      <p class="exp-period">2021 – 2023</p>
+      <span class="exp-org-badge">Programme Work</span>
+    </div>
+    <div class="exp-desc">
+      <h3 class="exp-role">Programme Associate — Sustainability</h3>
+      <p class="exp-org">Previous Organisation · Location</p>
+      <p>Managed field implementation of community-based adaptation programmes across three states, overseeing a portfolio of 24 villages integrating water, livelihoods, and ecosystem-based approaches.</p>
+      <p>Produced research outputs on climate vulnerability indices and co-authored policy briefs submitted to state planning bodies.</p>
+      <div class="exp-tags">
+        <span class="tag">Field Implementation</span>
+        <span class="tag">Community Adaptation</span>
+        <span class="tag">Research</span>
+      </div>
+    </div>
+  </div>
 
-<div class="card timeline">
-<h3>Previous Organisation</h3>
-<p class="text-sm">Role · 2021–2023</p>
-<ul class="mt-3 list-disc ml-5 text-sm">
-<li>Conducted policy and sustainability research informing program design</li>
-</ul>
-</div>
-
-</div>
+  <div class="exp-item">
+    <div class="exp-meta">
+      <p class="exp-period">2019 – 2021</p>
+      <span class="exp-org-badge">Early Career</span>
+    </div>
+    <div class="exp-desc">
+      <h3 class="exp-role">Research Analyst</h3>
+      <p class="exp-org">Research Organisation · Location</p>
+      <p>Conducted primary and secondary research on urban climate governance, with a focus on Indian cities' NDC-aligned action plans and local finance mobilisation.</p>
+      <div class="exp-tags">
+        <span class="tag">Urban Governance</span>
+        <span class="tag">NDC Research</span>
+        <span class="tag">Data Analysis</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- SELECTED WORK -->
-<section id="writing" class="section max-w-5xl mx-auto fade">
-<h2 class="text-3xl mb-8">Selected Work</h2>
+<!-- INTERESTS -->
+<div class="interests-bg">
+  <div class="interests-inner fade">
+    <p class="section-label">Areas of Focus</p>
+    <h2 class="section-title">What I work on</h2>
+    <div class="section-divider"></div>
 
-<div class="space-y-6">
-
-<a href="#" class="card block">
-<h3>Climate Adaptation in Practice</h3>
-<p class="text-sm mt-2">Why implementation gaps persist in local governance systems</p>
-<p class="text-sm mt-3 opacity-70">Read →</p>
-</a>
-
-<a href="#" class="card block">
-<h3>Community Systems and Climate Policy</h3>
-<p class="text-sm mt-2">Rethinking participation in adaptation frameworks</p>
-<p class="text-sm mt-3 opacity-70">Read →</p>
-</a>
-
+    <div class="interests-grid">
+      <div class="interest-card">
+        <span class="interest-icon">🌿</span>
+        <h3 class="interest-title">Climate Adaptation</h3>
+        <p class="interest-desc">Designing place-specific adaptation strategies that are ecologically sound, institutionally viable, and community-owned.</p>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon">🏛️</span>
+        <h3 class="interest-title">Governance Systems</h3>
+        <p class="interest-desc">Building multi-level governance architectures that connect national climate commitments to subnational implementation realities.</p>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon">👥</span>
+        <h3 class="interest-title">Communities & Equity</h3>
+        <p class="interest-desc">Centering marginalised and frontline communities in climate policy design, ensuring equity is structural, not rhetorical.</p>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon">💰</span>
+        <h3 class="interest-title">Climate Finance</h3>
+        <p class="interest-desc">Analysing finance flows, blended mechanisms, and institutional design to mobilise and direct capital toward just outcomes.</p>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon">🗺️</span>
+        <h3 class="interest-title">Field Research</h3>
+        <p class="interest-desc">Grounding policy in empirical fieldwork — from village-level ethnographies to institutional capacity assessments.</p>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon">🔗</span>
+        <h3 class="interest-title">Systems Thinking</h3>
+        <p class="interest-desc">Mapping feedback loops, leverage points, and interdependencies in socio-ecological and political-economic systems.</p>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- EDUCATION -->
+<section id="education" class="fade">
+  <p class="section-label">Education</p>
+  <h2 class="section-title">Academic formation</h2>
+  <div class="section-divider"></div>
+
+  <div class="edu-item">
+    <div class="edu-year">2019</div>
+    <div>
+      <h3 class="edu-degree">Master of Arts in Development Studies</h3>
+      <p class="edu-inst">Institution Name · City, Country</p>
+      <p class="edu-note">Dissertation on subnational climate governance and community-based adaptation in rural India. Received merit distinction. Relevant coursework in environmental policy, institutional economics, and political ecology.</p>
+    </div>
+  </div>
+
+  <div class="edu-item">
+    <div class="edu-year">2017</div>
+    <div>
+      <h3 class="edu-degree">Bachelor of Science in Environmental Studies</h3>
+      <p class="edu-inst">Institution Name · City, Country</p>
+      <p class="edu-note">Graduated with honours. Senior thesis examined the political economy of forest governance in central India. Active member of university sustainability council.</p>
+    </div>
+  </div>
 </section>
 
-<!-- ENGAGEMENTS -->
-<section id="engagements" class="section max-w-4xl mx-auto fade">
-<h2 class="text-3xl mb-8 text-center">Engagements</h2>
+<!-- PUBLICATIONS -->
+<div class="pub-section-bg">
+  <div class="pub-inner fade" id="publications">
+    <p class="section-label">Publications & Writing</p>
+    <h2 class="section-title">Research output</h2>
+    <div class="section-divider"></div>
 
-<div class="space-y-4 text-center">
+    <div class="pub-grid">
+      <a href="#" class="pub-card">
+        <p class="pub-type">Journal Article · 2024</p>
+        <h3 class="pub-title">Community-led adaptation and institutional coherence in dryland India</h3>
+        <p class="pub-meta">Journal of Climate Policy · Vol. 24, Issue 3</p>
+        <p class="pub-abstract">Examines how institutional fragmentation at the district level undermines community adaptation outcomes, drawing on 18 months of fieldwork across Rajasthan and Madhya Pradesh.</p>
+        <span class="pub-link">Read paper →</span>
+      </a>
 
-<p>Panel discussions and workshops on climate governance and implementation</p>
-<p>Collaborations with research institutions and policy organizations</p>
+      <a href="#" class="pub-card">
+        <p class="pub-type">Policy Brief · 2023</p>
+        <h3 class="pub-title">Closing the adaptation finance gap: subnational perspectives from South Asia</h3>
+        <p class="pub-meta">Organisation Name · October 2023</p>
+        <p class="pub-abstract">Analyses barriers to adaptation finance flows at state and district levels and proposes institutional reforms to enable more effective capital deployment.</p>
+        <span class="pub-link">Read brief →</span>
+      </a>
 
+      <a href="#" class="pub-card">
+        <p class="pub-type">Working Paper · 2022</p>
+        <h3 class="pub-title">Just Transition in coal-dependent districts: governance frameworks and social protection</h3>
+        <p class="pub-meta">Think Tank Name · Research Series</p>
+        <p class="pub-abstract">Maps the social and economic dependencies on coal in five Indian districts and assesses existing policy frameworks for their adequacy in managing a managed transition.</p>
+        <span class="pub-link">Read paper →</span>
+      </a>
+
+      <a href="#" class="pub-card">
+        <p class="pub-type">Report · 2021</p>
+        <h3 class="pub-title">Urban climate action plans in India: from commitment to implementation</h3>
+        <p class="pub-meta">Organisation Name · March 2021</p>
+        <p class="pub-abstract">Reviews 40 urban local body climate action plans across Tier-II Indian cities, assessing alignment with national NDC targets and local institutional capacity.</p>
+        <span class="pub-link">Read report →</span>
+      </a>
+    </div>
+  </div>
 </div>
-</section>
 
 <!-- CONTACT -->
-<section id="contact" class="section text-center fade">
-<h2 class="text-2xl mb-4">Contact</h2>
+<section id="contact" class="fade">
+  <p class="section-label">Contact</p>
+  <h2 class="section-title">Let's connect</h2>
+  <div class="section-divider"></div>
 
-<p class="mb-4">Open to research collaborations, policy consulting, and speaking engagements.</p>
+  <div class="contact-wrap">
+    <div>
+      <p class="contact-intro">Open to conversations on climate policy, research collaborations, and speaking engagements.</p>
+      <p class="contact-note">Whether you are a fellow researcher, a policy practitioner, a journalist, or a student — I am happy to talk.</p>
 
-<p>your@email.com</p>
+      <div class="contact-item">
+        <div class="contact-icon-wrap">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        </div>
+        <div>
+          <p class="contact-detail-label">Email</p>
+          <p class="contact-detail-val"><a href="mailto:your@email.com">your@email.com</a></p>
+        </div>
+      </div>
 
+      <div class="contact-item">
+        <div class="contact-icon-wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div>
+          <p class="contact-detail-label">LinkedIn</p>
+          <p class="contact-detail-val"><a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon-wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+        </div>
+        <div>
+          <p class="contact-detail-label">ResearchGate</p>
+          <p class="contact-detail-val"><a href="https://researchgate.net/profile/yourprofile" target="_blank">researchgate.net/profile/Ankit</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <input type="text" placeholder="Your name">
+      <input type="email" placeholder="Your email">
+      <input type="text" placeholder="Subject">
+      <textarea placeholder="Your message"></textarea>
+      <button type="button">Send message</button>
+    </div>
+  </div>
 </section>
 
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Ankit Jha · Climate Policy Professional · New Delhi, India</p>
+</footer>
+
 <script>
-
-/* ICON FIX */
-function updateIcons(){
-lucide.createIcons();
-}
-
-/* THEME */
-function toggleTheme(){
-document.body.classList.toggle('dark');
-document.getElementById("themeIcon").setAttribute("data-lucide",
-document.body.classList.contains('dark')?"moon":"sun");
-updateIcons();
-}
-
-window.addEventListener("DOMContentLoaded",updateIcons);
-
-/* NAV ACTIVE */
-const sections=document.querySelectorAll("section[id]");
-const navLinks=document.querySelectorAll(".nav-link");
-
-window.addEventListener("scroll",()=>{
-let current="";
-sections.forEach(section=>{
-if(window.scrollY>=section.offsetTop-120){
-current=section.id;
-}
-});
-navLinks.forEach(link=>{
-link.classList.remove("active");
-if(link.getAttribute("href")==="#"+current){
-link.classList.add("active");
-}
-});
+/* hero bg animate */
+window.addEventListener('load', () => {
+  document.getElementById('heroBg').classList.add('loaded');
 });
 
-/* FADE */
-const obs=new IntersectionObserver(e=>{
-e.forEach(x=>{
-if(x.isIntersecting){
-x.target.classList.add("show");
+/* theme */
+function toggleTheme() {
+  document.body.classList.toggle('dark');
 }
-});
-});
-document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 
+/* nav active link */
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const scrollSections = document.querySelectorAll('section[id], div[id]');
+
+window.addEventListener('scroll', () => {
+  let cur = '';
+  scrollSections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 120) cur = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+});
+
+/* fade in on scroll */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+/* contact form placeholder */
+document.querySelector('.contact-form button').addEventListener('click', () => {
+  alert('This form is a placeholder — connect your preferred form service (Formspree, Netlify Forms, etc.) to activate it.');
+});
 </script>
-
 </body>
 </html>
