@@ -38,6 +38,10 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
 }
 
+h1, h2, h3 {
+    letter-spacing: -0.02em;
+}
+
 /* NAV */
 header {
     background: rgba(255,255,255,0.85);
@@ -50,7 +54,7 @@ header {
 
 .nav-link {
     position: relative;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-primary);
 }
 
@@ -71,21 +75,21 @@ header {
 
 /* SECTIONS */
 .section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 /* CARDS */
 .card {
-    padding: 24px;
-    border-radius: 14px;
+    padding: 22px;
+    border-radius: 12px;
     background: rgba(255,255,255,0.75);
     border: 1px solid #e5e7eb;
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
 }
 
 .dark .card {
@@ -94,21 +98,20 @@ header {
 
 /* TIMELINE */
 .timeline {
-    border-left: 4px solid var(--accent);
-    padding-left: 18px;
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
 }
 
 /* HERO ICONS */
 .hero-icons i,
 .hero-icons img {
-    color: white !important;
     filter: brightness(0) invert(1);
 }
 
 /* ICON SIZE */
 i {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
 }
 
 /* FADE */
@@ -129,15 +132,16 @@ i {
 
 <!-- NAV -->
 <header class="fixed w-full flex justify-center items-center h-20 z-50">
-<div class="absolute left-6 text-2xl">🌤️</div>
+<div class="absolute left-6 text-2xl">🌍</div>
 
-<nav class="space-x-10">
+<nav class="space-x-8">
 <a href="#about" class="nav-link">About</a>
+<a href="#focus" class="nav-link">Focus</a>
 <a href="#work" class="nav-link">Experience</a>
-<a href="#education" class="nav-link">Education</a>
-<a href="#publications" class="nav-link">Publications</a>
+<a href="#writing" class="nav-link">Work</a>
+<a href="#engagements" class="nav-link">Engagements</a>
 <a href="#contact" class="nav-link">Contact</a>
-<a href="your_cv.pdf" target="_blank" class="px-4 py-2 border rounded-full">Download CV</a>
+<a href="your_cv.pdf" target="_blank" class="px-4 py-2 border rounded-full">CV</a>
 </nav>
 
 <div class="absolute right-6">
@@ -148,22 +152,26 @@ i {
 </header>
 
 <!-- HERO -->
-<section class="h-screen flex items-center justify-center text-center text-white relative">
+<section class="h-[80vh] flex items-center justify-center text-center text-white relative">
 
 <img src="https://images.pexels.com/photos/19236329/pexels-photo-19236329.jpeg?auto=compress&w=1600"
 class="absolute w-full h-full object-cover">
 
 <div class="absolute inset-0 bg-black/60"></div>
 
-<div class="relative px-6">
-<h1 class="text-6xl mb-4">Ankit Jha</h1>
+<div class="relative px-6 max-w-2xl">
+<h1 class="text-5xl mb-4">Ankit Jha</h1>
 
-<p class="text-green-300 text-xl">
-Climate Action • Communities • Governance
+<p class="text-green-300 text-lg">
+Climate Policy • Governance • Implementation
 </p>
 
-<p class="italic mt-4 max-w-xl mx-auto">
-Designing climate and development solutions at the intersection of policy, institutions, and communities across diverse geographies.
+<p class="mt-6 leading-relaxed">
+I work on how climate policy translates into real-world implementation — across institutions, communities, and governance systems in emerging contexts.
+</p>
+
+<p class="italic mt-4 text-sm opacity-90">
+Experience across research, program design, and field-led climate initiatives.
 </p>
 
 <div class="flex justify-center space-x-6 mt-6 hero-icons">
@@ -181,24 +189,45 @@ Designing climate and development solutions at the intersection of policy, insti
 </a>
 
 </div>
-
-</div>
-
 </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section max-w-4xl mx-auto text-center fade">
+<section id="about" class="section max-w-3xl mx-auto text-center fade">
 <h2 class="text-3xl mb-6">About</h2>
 
 <p>
-I work at the intersection of climate action, governance, and community systems, focusing on translating policy into implementation across diverse contexts.
+I am a policy professional working at the intersection of climate action, governance, and institutional systems. My work focuses on bridging the gap between policy design and on-ground implementation.
 </p>
 
 <p class="mt-4">
-My experience spans research, program design, and field implementation, engaging institutions and communities to build scalable solutions.
+Across my experience, I have engaged with governments, research institutions, and communities to design and implement climate and development initiatives in diverse contexts.
 </p>
 
+</section>
+
+<!-- CURRENT FOCUS -->
+<section id="focus" class="section max-w-4xl mx-auto fade">
+<h2 class="text-3xl mb-8 text-center">Current Focus</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="card">
+<h3>Climate Governance</h3>
+<p class="text-sm mt-2">Institutional design and policy implementation pathways</p>
+</div>
+
+<div class="card">
+<h3>Adaptation Systems</h3>
+<p class="text-sm mt-2">Community-led and locally grounded climate responses</p>
+</div>
+
+<div class="card">
+<h3>Policy → Practice</h3>
+<p class="text-sm mt-2">Bridging national frameworks with field realities</p>
+</div>
+
+</div>
 </section>
 
 <!-- EXPERIENCE -->
@@ -211,8 +240,8 @@ My experience spans research, program design, and field implementation, engaging
 <h3>Organisation Name</h3>
 <p class="text-sm">Role · 2023–Present</p>
 <ul class="mt-3 list-disc ml-5 text-sm">
-<li>Led climate resilience initiatives</li>
-<li>Worked with communities and institutions</li>
+<li>Designed and implemented climate resilience initiatives across multiple regions</li>
+<li>Collaborated with institutions and community stakeholders for program delivery</li>
 </ul>
 </div>
 
@@ -220,59 +249,54 @@ My experience spans research, program design, and field implementation, engaging
 <h3>Previous Organisation</h3>
 <p class="text-sm">Role · 2021–2023</p>
 <ul class="mt-3 list-disc ml-5 text-sm">
-<li>Policy and sustainability research</li>
+<li>Conducted policy and sustainability research informing program design</li>
 </ul>
 </div>
 
 </div>
 </section>
 
-<!-- INTERESTS -->
-<section class="section max-w-5xl mx-auto fade">
-<h2 class="text-3xl mb-10">Areas of Interest</h2>
-
-<div class="grid md:grid-cols-3 gap-6">
-
-<div class="card"><i data-lucide="leaf"></i><h3 class="mt-2">Climate</h3><p class="text-sm">Adaptation & sustainability</p></div>
-<div class="card"><i data-lucide="users"></i><h3 class="mt-2">Communities</h3><p class="text-sm">Inclusive development</p></div>
-<div class="card"><i data-lucide="building"></i><h3 class="mt-2">Governance</h3><p class="text-sm">Policy systems</p></div>
-<div class="card"><i data-lucide="map"></i><h3 class="mt-2">Field Work</h3><p class="text-sm">Implementation</p></div>
-<div class="card"><i data-lucide="bar-chart-3"></i><h3 class="mt-2">Research</h3><p class="text-sm">Data insights</p></div>
-<div class="card"><i data-lucide="brain"></i><h3 class="mt-2">Systems</h3><p class="text-sm">Systems thinking</p></div>
-
-</div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="section max-w-5xl mx-auto fade">
-<h2 class="text-3xl mb-8">Education</h2>
+<!-- SELECTED WORK -->
+<section id="writing" class="section max-w-5xl mx-auto fade">
+<h2 class="text-3xl mb-8">Selected Work</h2>
 
 <div class="space-y-6">
 
-<div class="card timeline">
-<h3>Degree Name</h3>
-<p>Institution · Year</p>
-</div>
+<a href="#" class="card block">
+<h3>Climate Adaptation in Practice</h3>
+<p class="text-sm mt-2">Why implementation gaps persist in local governance systems</p>
+<p class="text-sm mt-3 opacity-70">Read →</p>
+</a>
+
+<a href="#" class="card block">
+<h3>Community Systems and Climate Policy</h3>
+<p class="text-sm mt-2">Rethinking participation in adaptation frameworks</p>
+<p class="text-sm mt-3 opacity-70">Read →</p>
+</a>
 
 </div>
 </section>
 
-<!-- PUBLICATIONS -->
-<section id="publications" class="section max-w-5xl mx-auto fade">
-<h2 class="text-3xl mb-8">Publications</h2>
+<!-- ENGAGEMENTS -->
+<section id="engagements" class="section max-w-4xl mx-auto fade">
+<h2 class="text-3xl mb-8 text-center">Engagements</h2>
 
-<a href="#" class="card block">
-<h3>Paper Title</h3>
-<p class="text-sm">Journal · Year</p>
-<p class="text-sm mt-2">Click to read →</p>
-</a>
+<div class="space-y-4 text-center">
 
+<p>Panel discussions and workshops on climate governance and implementation</p>
+<p>Collaborations with research institutions and policy organizations</p>
+
+</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section text-center fade">
 <h2 class="text-2xl mb-4">Contact</h2>
+
+<p class="mb-4">Open to research collaborations, policy consulting, and speaking engagements.</p>
+
 <p>your@email.com</p>
+
 </section>
 
 <script>
