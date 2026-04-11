@@ -3,74 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ankit Jha</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-body { font-family: Inter, sans-serif; }
 
-/* THEME */
-.dark { background:#0f172a; color:#e2e8f0; }
-.dark header { background:#0f172a; }
-.dark .nav-link { color:#e2e8f0; }
+/* BASE */
+body {
+    font-family: Inter, sans-serif;
+    background: #f7f7f5;
+    color: #1f2937;
+    line-height: 1.6;
+}
 
 /* NAV */
 .nav-link {
-    font-size:18px;
-    position:relative;
-}
-.nav-link::after {
-    content:'';
-    position:absolute;
-    width:0;
-    height:2px;
-    bottom:-4px;
-    left:0;
-    background:#22c55e;
-    transition:0.3s;
-}
-.nav-link:hover::after { width:100%; }
-.nav-link {
-    position: relative;
-    color: #374151; /* dark gray */
-    transition: color 0.3s;
+    font-size: 18px;
+    color: #374151;
 }
 
-.nav-link:hover {
-    color: #166534; /* earthy green */
-}
-
-.dark .nav-link {
-    color: #e2e8f0;
-}
-
-.dark .nav-link:hover {
-    color: #86efac;
-}
 /* SECTION */
 .section {
-    padding:80px 0;
-    border-bottom:1px solid #eee;
+    padding: 90px 0;
+    border-bottom: 1px solid #e5e7eb;
 }
-.dark .section { border-color:#1e293b; }
 
-/* TITLE */
+/* TITLES */
 .section-title {
-    font-size:28px;
-    font-weight:600;
+    font-size: 30px;
+    font-weight: 600;
 }
 
-/* FADE */
-.fade { opacity:0; transform:translateY(20px); transition:0.6s; }
-.fade.show { opacity:1; transform:none; }
+/* TEXT */
+p {
+    font-size: 16px;
+    color: #4b5563;
+}
+
+/* CARDS */
+.card {
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: 0.3s;
+}
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* HERO TEXT */
+.hero-text {
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
 
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <header class="fixed w-full border-b bg-white flex justify-center items-center h-20 z-50">
 
 <div class="absolute left-6 text-2xl">🌤️</div>
@@ -81,14 +75,12 @@ body { font-family: Inter, sans-serif; }
 <a href="#education" class="nav-link">Education</a>
 <a href="#publications" class="nav-link">Publications</a>
 <a href="#contact" class="nav-link">Contact</a>
-     <a href="your_cv.pdf" target="_blank"
-       class="px-4 py-2 border rounded-full hover:bg-black hover:text-white transition">
-       CV
-</nav>
 
-<button onclick="toggleTheme(); return false;" type="button" class="absolute right-6 text-xl cursor-pointer">
-    🌻
-</button>
+<a href="your_cv.pdf" target="_blank"
+class="px-4 py-2 border rounded-full">
+CV
+</a>
+</nav>
 
 </header>
 
@@ -100,22 +92,24 @@ class="absolute w-full h-full object-cover">
 
 <div class="absolute inset-0 bg-black/60"></div>
 
-<div class="relative">
-<h1 class="text-6xl mb-4">Ankit Jha</h1>
+<div class="relative hero-text px-6">
+<h1 class="text-6xl mb-4 font-semibold">Ankit Jha</h1>
 
-<p class="text-green-300 text-xl">
+<p class="text-green-300 text-xl mb-4">
 Climate Action • Communities • Governance
 </p>
 
-<p class="italic mt-4">
+<p class="italic text-gray-200 max-w-xl mx-auto">
 Working at the intersection of people, policy, and planet.
 </p>
 
-<div class="mt-6 space-x-6">
-<span>✉️</span>
-<span>in</span>
-<span>📷</span>
-<span>RG</span>
+<div class="mt-6 flex justify-center space-x-6 text-lg">
+
+<a href="mailto:your@email.com">✉️</a>
+<a href="https://linkedin.com" target="_blank">in</a>
+<a href="https://instagram.com" target="_blank">📷</a>
+<a href="https://researchgate.net" target="_blank">RG</a>
+
 </div>
 
 </div>
@@ -127,18 +121,19 @@ Working at the intersection of people, policy, and planet.
 
 <div class="section-title">About</div>
 
-<div class="md:col-span-2 text-gray-600">
+<div class="md:col-span-2">
 <p>
-I work at the intersection of climate action, community engagement, and governance, with a focus on designing and implementing pathways that are both environmentally sustainable and socially equitable. My work spans research, policy, and field-based interventions, engaging with diverse stakeholders across geographies to translate ideas into actionable impact.
+I work at the intersection of climate action, community engagement, and governance, with a focus on designing and implementing pathways that are both environmentally sustainable and socially equitable.
 </p>
 
 <p class="mt-4">
-I am particularly interested in understanding how local contexts shape climate responses, and how institutions can better align with community realities. Through my work, I aim to contribute to building systems that are adaptive, inclusive, and grounded in lived experiences.
+My work spans research, policy, and field-based interventions, engaging with diverse stakeholders across geographies to translate ideas into actionable impact.
 </p>
 
 <p class="mt-4">
-My approach is inherently interdisciplinary—bringing together insights from development practice, policy design, and systems thinking to address complex challenges at the interface of people and the planet.
+I am particularly interested in understanding how local contexts shape climate responses, and how institutions can better align with community realities.
 </p>
+
 </div>
 
 </div>
@@ -153,10 +148,10 @@ My approach is inherently interdisciplinary—bringing together insights from de
 <div class="md:col-span-2 space-y-10">
 
 <div>
-<h3 class="font-semibold">Organisation Name</h3>
+<h3 class="font-semibold text-lg">Organisation Name</h3>
 <p class="text-sm text-gray-500">Role · 2023–Present</p>
-<p class="text-gray-600 mt-2">
-Clear, impact-focused description.
+<p class="mt-2">
+Clear, impact-focused description of your work.
 </p>
 </div>
 
@@ -165,54 +160,42 @@ Clear, impact-focused description.
 </div>
 </section>
 
-<!-- Areas of Interest -->
-    <section class="section">
+<!-- INTERESTS -->
+<section class="section">
 <div class="max-w-6xl mx-auto px-6">
 
-<h2 class="text-2xl mb-10">Areas of Interest</h2>
+<h2 class="text-2xl mb-10 font-semibold">Areas of Interest</h2>
 
 <div class="grid md:grid-cols-3 gap-6">
 
-<div class="p-6 border rounded-lg hover:shadow-md transition">
+<div class="card">
 <h3 class="font-semibold mb-2">Climate & Sustainability</h3>
-<p class="text-sm text-gray-600">
-Climate adaptation, resilience, and sustainable development pathways.
-</p>
+<p>Adaptation, resilience, and sustainable development.</p>
 </div>
 
-<div class="p-6 border rounded-lg hover:shadow-md transition">
+<div class="card">
 <h3 class="font-semibold mb-2">Communities & Development</h3>
-<p class="text-sm text-gray-600">
-Grassroots engagement, inclusive development, and social equity.
-</p>
+<p>Grassroots engagement and inclusive growth.</p>
 </div>
 
-<div class="p-6 border rounded-lg hover:shadow-md transition">
+<div class="card">
 <h3 class="font-semibold mb-2">Governance & Policy</h3>
-<p class="text-sm text-gray-600">
-Public policy design, institutional frameworks, and governance systems.
-</p>
+<p>Institutional design and policy frameworks.</p>
 </div>
 
-<div class="p-6 border rounded-lg hover:shadow-md transition">
+<div class="card">
 <h3 class="font-semibold mb-2">Field Implementation</h3>
-<p class="text-sm text-gray-600">
-On-ground program execution across diverse geographies.
-</p>
+<p>On-ground execution across geographies.</p>
 </div>
 
-<div class="p-6 border rounded-lg hover:shadow-md transition">
+<div class="card">
 <h3 class="font-semibold mb-2">Research & Analysis</h3>
-<p class="text-sm text-gray-600">
-Evidence-based research, data analysis, and policy insights.
-</p>
+<p>Data-driven insights and evaluation.</p>
 </div>
 
-<div class="p-6 border rounded-lg hover:shadow-md transition">
+<div class="card">
 <h3 class="font-semibold mb-2">Systems Thinking</h3>
-<p class="text-sm text-gray-600">
-Interdisciplinary approaches to complex development challenges.
-</p>
+<p>Interdisciplinary problem-solving approaches.</p>
 </div>
 
 </div>
@@ -225,12 +208,10 @@ Interdisciplinary approaches to complex development challenges.
 
 <div class="section-title">Education</div>
 
-<div class="md:col-span-2 space-y-6">
+<div class="md:col-span-2">
 
-<div>
-<h3 class="font-semibold">Degree Name</h3>
+<h3 class="font-semibold text-lg">Degree Name</h3>
 <p class="text-gray-500">Institution · Year</p>
-</div>
 
 </div>
 
@@ -243,13 +224,11 @@ Interdisciplinary approaches to complex development challenges.
 
 <div class="section-title">Publications</div>
 
-<div class="md:col-span-2 space-y-6">
+<div class="md:col-span-2">
 
-<div>
 <h3 class="font-semibold">Paper Title</h3>
 <p class="text-gray-500">Journal · Year</p>
-<a href="#" class="text-green-600">Read →</a>
-</div>
+<a href="your-link" target="_blank" class="text-green-600">Read →</a>
 
 </div>
 
@@ -259,33 +238,18 @@ Interdisciplinary approaches to complex development challenges.
 <!-- CONTACT -->
 <section id="contact" class="section text-center">
 
-<h2 class="text-2xl mb-4">Contact</h2>
+<h2 class="text-2xl mb-4 font-semibold">Contact</h2>
 
 <p>your@email.com</p>
 
-<div class="mt-4 space-x-6">
-<span>✉️</span>
-<span>in</span>
-<span>📷</span>
-<span>RG</span>
+<div class="mt-4 flex justify-center space-x-6 text-lg">
+<a href="mailto:your@email.com">✉️</a>
+<a href="https://linkedin.com" target="_blank">in</a>
+<a href="https://instagram.com" target="_blank">📷</a>
+<a href="https://researchgate.net" target="_blank">RG</a>
 </div>
 
 </section>
-
-<script>
-/* fade */
-const obs = new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting) e.target.classList.add('show');
-});
-});
-document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
-
-/* theme */
-function toggleTheme(){
-document.body.classList.toggle('dark');
-}
-</script>
 
 </body>
 </html>
