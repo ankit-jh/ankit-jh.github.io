@@ -1,6 +1,21 @@
 (() => {
   'use strict';
 
+  /* ---------- CUSTOM CURSOR ---------- */
+  const cursorDot = document.getElementById('cursorDot');
+  const isCoarsePointer = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  if (cursorDot && !isCoarsePointer) {
+    window.addEventListener('mousemove', e => {
+      cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+    });
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest('a, button, .pub-card, .focus-card')) cursorDot.classList.add('grow');
+    });
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest('a, button, .pub-card, .focus-card')) cursorDot.classList.remove('grow');
+    });
+  }
+
   /* ---------- THEME ---------- */
   const root = document.documentElement;
   const themeToggle = document.getElementById('themeToggle');
