@@ -101,7 +101,7 @@
   countEls.forEach(el => countObserver.observe(el));
 
   /* ---------- ROTATING ROLE WORD ---------- */
-  const roleWords = ['climate adaptation', 'governance reform', 'locally-led action', 'community resilience', 'climate finance'];
+  const roleWords = ['environment, climate and sustainable development', 'governance reform', 'locally-led action', 'community resilience', 'climate finance'];
   const roleEl = document.getElementById('roleWord');
   let wi = 0, ci = roleWords[0].length, deleting = false;
 
