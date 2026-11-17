@@ -9,10 +9,10 @@
       cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
     });
     document.addEventListener('mouseover', e => {
-      if (e.target.closest('a, button, .pub-card, .focus-card')) cursorDot.classList.add('grow');
+      if (e.target.closest('a, button, input, textarea')) cursorDot.classList.add('grow');
     });
     document.addEventListener('mouseout', e => {
-      if (e.target.closest('a, button, .pub-card, .focus-card')) cursorDot.classList.remove('grow');
+      if (e.target.closest('a, button, input, textarea')) cursorDot.classList.remove('grow');
     });
   }
 
@@ -181,7 +181,7 @@
       phase: Math.random() * 1000,
       speed: 0.12 + Math.random() * 0.14,
       gold: Math.random() < 0.16,
-      opacity: 0.05 + Math.random() * 0.1,
+      opacity: 0.08 + Math.random() * 0.14,
     }));
   }
 
