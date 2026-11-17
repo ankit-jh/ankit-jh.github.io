@@ -98,43 +98,24 @@ button { font-family: inherit; }
   transition: width .1s linear;
 }
 
-/* ---------- AURORA (background depth) ---------- */
-.aurora {
+/* ---------- GRAIN + VIGNETTE (background depth) ---------- */
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 0%, color-mix(in srgb, var(--forest) 10%, transparent), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, color-mix(in srgb, var(--gold) 8%, transparent), transparent 65%);
+}
+.grain {
   position: fixed;
   inset: 0;
   z-index: -3;
-  overflow: hidden;
   pointer-events: none;
-}
-.aurora-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  will-change: transform;
-}
-.aurora-1 {
-  top: -10%; left: -8%; width: 52vw; height: 52vw;
-  background: var(--moss);
-  opacity: .22;
-  animation: auroraDrift1 34s ease-in-out infinite alternate;
-}
-.aurora-2 {
-  bottom: -14%; right: -10%; width: 46vw; height: 46vw;
-  background: var(--gold);
-  opacity: .16;
-  animation: auroraDrift2 40s ease-in-out infinite alternate;
-}
-.aurora-3 {
-  top: 36%; left: 46%; width: 34vw; height: 34vw;
-  background: var(--accent);
-  opacity: .1;
-  animation: auroraDrift3 28s ease-in-out infinite alternate;
-}
-@keyframes auroraDrift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(6vw, 8vh) scale(1.12); } }
-@keyframes auroraDrift2 { from { transform: translate(0, 0) scale(1); } to { transform: translate(-7vw, -6vh) scale(1.08); } }
-@keyframes auroraDrift3 { from { transform: translate(0, 0) scale(1); } to { transform: translate(-5vw, 6vh) scale(0.94); } }
-@media (prefers-reduced-motion: reduce) {
-  .aurora-blob { animation: none; }
+  opacity: .05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
 /* ---------- FIELD CANVAS (hero background) ---------- */
@@ -438,6 +419,13 @@ button { font-family: inherit; }
 .badge { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--moss); background: var(--fog); padding: 5px 10px; border-radius: 999px; }
 .badge-current { color: var(--accent-ink); background: var(--accent); }
 
+.org-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; margin-bottom: 14px;
+  border-radius: 50%;
+  background: var(--forest); color: var(--paper);
+  font-family: var(--serif); font-size: 13px; font-weight: 700; letter-spacing: .02em;
+}
 .tl-role { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
 .tl-org { font-size: 13px; color: var(--sage); font-weight: 600; margin-bottom: 14px; }
 .tl-body p { font-size: 14.5px; line-height: 1.8; color: var(--ink-2); margin-bottom: 10px; }
