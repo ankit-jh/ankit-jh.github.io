@@ -16,8 +16,8 @@ html { scroll-behavior: smooth; }
   --gold:     #b8954a;
   --radius:   10px;
   --nav-h:    68px;
-  --sans:     'Inter', sans-serif;
-  --serif:    'Fraunces', serif;
+  --sans:     'Montserrat', sans-serif;
+  --serif:    'Montserrat', sans-serif;
   --ease:     cubic-bezier(.22,1,.36,1);
 }
 
