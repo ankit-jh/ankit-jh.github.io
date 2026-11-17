@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ankit Jha — climate policy professional working on governance, locally-led climate action and community resilience in India.">
+<title>Ankit Jha — Climate Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<canvas id="fieldCanvas" class="field-canvas"></canvas>
+
+<header class="nav" id="nav">
+  <a href="#top" class="nav-logo">Ankit Jha</a>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#about" data-nav>About</a>
+    <a href="#work" data-nav>Experience</a>
+    <a href="#education" data-nav>Education</a>
+    <a href="#publications" data-nav>Publications</a>
+    <a href="#contact" data-nav>Contact</a>
+    <a href="ajresume.pdf" target="_blank" rel="noopener" class="nav-cv">Résumé</a>
+  </nav>
+
+  <div class="nav-controls">
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">New Delhi, India</p>
+      <h1 class="hero-name reveal" style="transition-delay:.05s">Ankit Jha</h1>
+      <p class="hero-role reveal" style="transition-delay:.1s">
+        Working on <span id="roleWord" class="role-word">climate adaptation</span><span class="cursor">|</span>
+      </p>
+      <p class="hero-tagline reveal" style="transition-delay:.15s">
+        Advancing climate and development solutions through policy, institutions and community systems — translating national frameworks into implementation that communities can own.
+      </p>
+
+      <div class="hero-actions reveal" style="transition-delay:.2s">
+        <a href="#work" class="btn btn-primary">
+          <span>Explore my work</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="hero-social">
+          <a href="mailto:workspaceforankit@gmail.com" class="icon-btn" title="Email">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ankitjh/" target="_blank" rel="noopener" class="icon-btn" title="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://researchgate.net/profile/Ankit" target="_blank" rel="noopener" class="icon-btn" title="ResearchGate">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V10h2v6zm-1-7a1 1 0 110-2 1 1 0 010 2zm6 7h-2v-3.5c0-.83-.67-1.5-1.5-1.5S11 11.67 11 12.5V16H9v-6h2v.77c.46-.59 1.17-.77 1.5-.77 1.38 0 2.5 1.12 2.5 2.5V16z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <button class="scroll-cue" id="scrollCue" aria-label="Scroll down">
+      <span>Scroll</span>
+      <span class="scroll-line"></span>
+    </button>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-head reveal">
+      <p class="section-label">01 · About</p>
+      <h2 class="section-title">Aspiring to build sustainable futures for all</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p>I work at the intersection of climate action, governance and community systems — helping translate complex policy frameworks into implementation that is practical, equitable and lasting.</p>
+        <p>My work spans research, programme management and field implementation across India, engaging actors from governments to grassroots communities. I'm particularly interested in how climate solutions can remain coherent across institutional, geographic and social scales.</p>
+        <p>I'm drawn to questions of institutional design: how do we build the administrative capacity, financial mechanisms and political legitimacy necessary for communities to lead their own climate transitions.</p>
+
+        <div class="stats-grid">
+          <div class="stat"><span class="stat-num" data-count="7">0</span><span class="stat-suffix">+</span><span class="stat-label">Years in climate policy</span></div>
+          <div class="stat"><span class="stat-num" data-count="12">0</span><span class="stat-suffix">+</span><span class="stat-label">States &amp; geographies</span></div>
+          <div class="stat"><span class="stat-num" data-count="4">0</span><span class="stat-label">Publications</span></div>
+          <div class="stat"><span class="stat-num" data-count="5">0</span><span class="stat-label">Organisations</span></div>
+        </div>
+      </div>
+
+      <aside class="about-aside reveal" style="transition-delay:.1s">
+        <blockquote class="pull-quote">
+          "The most durable climate solutions are those that communities don't just participate in — but own."
+        </blockquote>
+        <p class="aside-label">Aspiration</p>
+        <p class="aside-text">To contribute to the body of evidence and institutional practice that makes climate governance genuinely responsive to the people most affected by it — and to do so with rigour, honesty, and a long view.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="work" class="section">
+    <div class="section-head reveal">
+      <p class="section-label">02 · Experience</p>
+      <h2 class="section-title">Where I've worked</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-rail"></div>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-meta">
+          <p class="tl-period">2024 — Present</p>
+          <span class="badge badge-current">Current role</span>
+        </div>
+        <div class="tl-body">
+          <h3 class="tl-role">Programme Associate — Climate Resilience</h3>
+          <p class="tl-org">CEEW · New Delhi, India</p>
+          <p>Leading research on Locally Led Climate Action (LLCA), documenting community-driven adaptation practices and systemic barriers. Supporting a national framework on governance, finance and capacity to strengthen ownership and scalability of local climate solutions.</p>
+          <p>Contributing to policy research on the equity and governance aspects of climate resilience, especially within India's urban landscapes.</p>
+          <div class="tags">
+            <span class="tag">Locally-led Climate Action</span>
+            <span class="tag">Sub-national Policy</span>
+            <span class="tag">Urban Governance</span>
+            <span class="tag">Stakeholder Engagement</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-meta">
+          <p class="tl-period">2024</p>
+          <span class="badge">Policy Research</span>
+        </div>
+        <div class="tl-body">
+          <h3 class="tl-role">Manager (Research) — Climate Insights Unit</h3>
+          <p class="tl-org">Shakti Sustainable Energy Foundation · New Delhi</p>
+          <p>Contributed to climate strategy and research prioritisation through horizon scanning and M&amp;E inputs across programmes. Convened a multi-stakeholder forum of policymakers, industry and civil society addressing India's net-zero challenges.</p>
+          <p>Launched a cross-sectoral climate policy newsletter tracking major national and international mitigation policy developments and emerging technologies.</p>
+          <div class="tags">
+            <span class="tag">Policy Research</span>
+            <span class="tag">Mitigation &amp; Net-Zero</span>
+            <span class="tag">Foresight</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-meta">
+          <p class="tl-period">2022 — 2023</p>
+          <span class="badge">Government</span>
+        </div>
+        <div class="tl-body">
+          <h3 class="tl-role">Associate Research Fellow</h3>
+          <p class="tl-org">Delhi Legislative Assembly · New Delhi</p>
+          <p>Worked on Delhi's Green Policy draft focusing on climate resilience, green cover and biodiversity. Conducted policy research and developed briefs for elected representatives while designing the Assembly's sustainability initiatives, including a plastic neutrality project. Operationalised a citizen grievance system improving service delivery tracking for 200,000+ residents.</p>
+          <div class="tags">
+            <span class="tag">Urban Governance</span>
+            <span class="tag">Political Economy</span>
+            <span class="tag">Data &amp; Insights</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-meta">
+          <p class="tl-period">2020 — 2022</p>
+          <span class="badge">Grassroots &amp; Community</span>
+        </div>
+        <div class="tl-body">
+          <h3 class="tl-role">Rural Futures — Knowledge, Strategy and Advocacy</h3>
+          <p class="tl-org">Balipara Foundation · Guwahati, Assam</p>
+          <p>Led knowledge management and strategic advocacy on rural futures and landscape restoration in the Eastern Himalayas and Northeast India, one of the world's most biodiverse and climate-vulnerable regions.</p>
+          <p>Designed and implemented a climate resilience programme across 24 villages, engaging 3,000+ community members. Helped secure funding of INR 1 Cr+ and co-developed a well-being index to assess climate impacts on livelihoods.</p>
+          <div class="tags">
+            <span class="tag">Landscape Restoration</span>
+            <span class="tag">Knowledge Management</span>
+            <span class="tag">Northeast India</span>
+            <span class="tag">Community Well-being</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-meta">
+          <p class="tl-period">2019 — 2020</p>
+          <span class="badge">Early Career</span>
+        </div>
+        <div class="tl-body">
+          <h3 class="tl-role">Fellow</h3>
+          <p class="tl-org">SIFF–UNEP–RySS · Guntur, Andhra Pradesh</p>
+          <p>Part of a tripartite fellowship on Andhra Pradesh's flagship natural farming programme — supporting field research and programme learning on zero-budget natural farming at scale.</p>
+          <p>Contributed to documentation of farmer outcomes, institutional processes and state-level policy interfaces around sustainable agriculture. Led a multi-district study with 500 farmers assessing the impact of natural farming on climate resilience and productivity.</p>
+          <div class="tags">
+            <span class="tag">Natural Farming</span>
+            <span class="tag">UNEP</span>
+            <span class="tag">Livelihoods</span>
+            <span class="tag">Field Research</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOCUS -->
+  <section class="section section-dark">
+    <div class="section-head reveal">
+      <p class="section-label">03 · Focus areas</p>
+      <h2 class="section-title">What I work on</h2>
+    </div>
+
+    <div class="focus-grid">
+      <div class="focus-card reveal">
+        <span class="focus-icon">🌿</span>
+        <h3>Climate Adaptation</h3>
+        <p>Designing place-specific adaptation strategies that are ecologically sound, institutionally viable and community-owned.</p>
+      </div>
+      <div class="focus-card reveal" style="transition-delay:.05s">
+        <span class="focus-icon">🏛️</span>
+        <h3>Governance Systems</h3>
+        <p>Building multi-level governance architectures that connect national climate commitments to subnational implementation realities.</p>
+      </div>
+      <div class="focus-card reveal" style="transition-delay:.1s">
+        <span class="focus-icon">👥</span>
+        <h3>Communities &amp; Equity</h3>
+        <p>Centring marginalised and frontline communities in climate policy design, ensuring equity is structural, not rhetorical.</p>
+      </div>
+      <div class="focus-card reveal" style="transition-delay:.15s">
+        <span class="focus-icon">💰</span>
+        <h3>Climate Finance</h3>
+        <p>Analysing finance flows, blended mechanisms and institutional design to mobilise and direct capital toward just outcomes.</p>
+      </div>
+      <div class="focus-card reveal" style="transition-delay:.2s">
+        <span class="focus-icon">🗺️</span>
+        <h3>Field Research</h3>
+        <p>Grounding policy in empirical fieldwork — from village-level ethnographies to institutional capacity assessments.</p>
+      </div>
+      <div class="focus-card reveal" style="transition-delay:.25s">
+        <span class="focus-icon">🔗</span>
+        <h3>Systems Thinking</h3>
+        <p>Mapping feedback loops, leverage points and interdependencies in socio-ecological and political-economic systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <div class="section-head reveal">
+      <p class="section-label">04 · Education</p>
+      <h2 class="section-title">Academics</h2>
+    </div>
+
+    <div class="edu-list">
+      <div class="edu-item reveal">
+        <span class="edu-year">2023—2024</span>
+        <div>
+          <h3>PEDP — Data Science for Social Impact</h3>
+          <p class="edu-inst">Ashoka University, India</p>
+        </div>
+      </div>
+      <div class="edu-item reveal" style="transition-delay:.05s">
+        <span class="edu-year">2022—2023</span>
+        <div>
+          <h3>Post-Graduate Diploma in Environmental Law and Policy</h3>
+          <p class="edu-inst">National Law University, Delhi</p>
+        </div>
+      </div>
+      <div class="edu-item reveal" style="transition-delay:.1s">
+        <span class="edu-year">2016—2018</span>
+        <div>
+          <h3>Master of Arts in Ecology, Environment and Sustainable Development</h3>
+          <p class="edu-inst">Tata Institute of Social Sciences, Delhi, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="section section-alt">
+    <div class="section-head reveal">
+      <p class="section-label">05 · Publications &amp; writing</p>
+      <h2 class="section-title">Featured work</h2>
+    </div>
+
+    <div class="pub-filters reveal" id="pubFilters">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="Policy Review">Policy Review</button>
+      <button class="filter-chip" data-filter="Commentary">Commentary</button>
+      <button class="filter-chip" data-filter="Working Paper">Working Paper</button>
+      <button class="filter-chip" data-filter="Report">Report</button>
+    </div>
+
+    <div class="pub-grid" id="pubGrid">
+      <a href="https://www.ceew.in/sites/default/files/embedding-equity-in-urban-climate-resilience.pdf" target="_blank" rel="noopener" class="pub-card reveal" data-type="Policy Review">
+        <p class="pub-type">Policy Review · 2025</p>
+        <h3 class="pub-title">Embedding Equity in Urban Climate Resilience: Rethinking Service Delivery in Indian Cities</h3>
+        <p class="pub-meta">Shelter · Vol. 26, Issue 2</p>
+        <p class="pub-abstract">Examines how climate change is transforming episodic urban hazards into systemic service failures across Indian cities. Using Mumbai as a case study, explores how floods, heatwaves and storms intersect with inequitable service delivery, outdated infrastructure and centralised governance.</p>
+        <span class="pub-link">Read paper →</span>
+      </a>
+
+      <div class="pub-card" data-type="Commentary">
+        <p class="pub-type">Commentary · 2026</p>
+        <h3 class="pub-title">Beyond Grey: The Case for Revaluing Urban Blue-Green Assets in Indian Cities</h3>
+        <p class="pub-meta">Shelter</p>
+        <p class="pub-abstract">Explores how natural infrastructure such as lakes and wetlands is undervalued in municipal systems, limiting effective urban planning. Proposes reforms — asset registers, valuation methods and health indices — to integrate these assets into climate resilience frameworks.</p>
+        <span class="pub-link pub-link-muted">Link coming soon</span>
+      </div>
+
+      <div class="pub-card" data-type="Working Paper">
+        <p class="pub-type">Working Paper · 2022</p>
+        <h3 class="pub-title">Just Transition in Coal-Dependent Districts: Governance Frameworks and Social Protection</h3>
+        <p class="pub-meta">Research Series</p>
+        <p class="pub-abstract">Maps the social and economic dependencies on coal in five Indian districts and assesses existing policy frameworks for their adequacy in managing a just transition.</p>
+        <span class="pub-link pub-link-muted">Link coming soon</span>
+      </div>
+
+      <a href="https://baliparafoundation.com/wp-content/uploads/2020/12/Naturenomics-Ecological-Revolution-min.pdf" target="_blank" rel="noopener" class="pub-card reveal" data-type="Report">
+        <p class="pub-type">Report · 2021</p>
+        <h3 class="pub-title">RuFu Vol. 2 — Naturenomics™ Ecological Revolution</h3>
+        <p class="pub-meta">Balipara Foundation · 2020</p>
+        <p class="pub-abstract">An interdisciplinary volume examining climate resilience and natural capital in the Eastern Himalayas — nature-based economies, community-led development, gender and livelihoods, and biodiversity governance.</p>
+        <span class="pub-link">Read report →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-head reveal">
+      <p class="section-label">06 · Contact</p>
+      <h2 class="section-title">Let's connect</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="contact-intro">Open to conversations on climate policy, research collaborations and speaking engagements.</p>
+        <p class="contact-note">Whether you're a fellow researcher, a policy practitioner, a journalist or a student — I'm happy to talk.</p>
+
+        <div class="contact-list">
+          <a class="contact-row" href="mailto:workspaceforankit@gmail.com">
+            <span class="contact-row-icon">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </span>
+            <span><span class="contact-row-label">Email</span><span class="contact-row-val">workspaceforankit@gmail.com</span></span>
+          </a>
+          <a class="contact-row" href="https://www.linkedin.com/in/ankitjh/" target="_blank" rel="noopener">
+            <span class="contact-row-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </span>
+            <span><span class="contact-row-label">LinkedIn</span><span class="contact-row-val">linkedin.com/in/ankitjh</span></span>
+          </a>
+          <a class="contact-row" href="https://researchgate.net/profile/Ankit" target="_blank" rel="noopener">
+            <span class="contact-row-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+            </span>
+            <span><span class="contact-row-label">ResearchGate</span><span class="contact-row-val">researchgate.net/profile/Ankit</span></span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" style="transition-delay:.1s">
+        <input type="text" id="cfName" placeholder="Your name" required>
+        <input type="email" id="cfEmail" placeholder="Your email" required>
+        <input type="text" id="cfSubject" placeholder="Subject">
+        <textarea id="cfMessage" placeholder="Your message" required></textarea>
+        <button type="submit" class="btn btn-primary btn-block">
+          <span>Send message</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <p class="form-hint" id="formHint">Opens your email client with this message pre-filled.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Ankit Jha · Climate Policy Professional · New Delhi, India</p>
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
